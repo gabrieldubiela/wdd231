@@ -112,7 +112,16 @@ function filterCourses(criteria) {
     }
 
     renderCourses(filteredCourses);
+    totalCreditsElement.textContent = `Total Credits: ${calculateTotalCredits(filteredCourses)}`;
 }
+
+const totalCreditsElement = document.getElementById("total-credits");
+function calculateTotalCredits(coursesArray) {
+    return coursesArray.reduce((total, course) => total + course.credits, 0);
+}
+
+calculateTotalCredits(courses);
+totalCreditsElement.textContent = `Total Credits: ${calculateTotalCredits(courses)}`;
 
 document.getElementById("All").addEventListener("click", () => filterCourses("All"));
 document.getElementById("WDD").addEventListener("click", () => filterCourses("WDD"));

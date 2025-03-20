@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Home Page</title>
+    <meta name="description" content="This is the home page for the course WDD 231">
+    <meta name="author" content="Gabriel Dubiela">
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div>
+            <img src="images/gabriel.webp" alt="Small Photo of Gabriel Dubiela" width="100" height="100">
+            <span>Gabriel Dubiela</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="chamber.html">Chamber</a></li>
+                <li><a href="https://github.com/gabrieldubiela">GitHub Profile</a></li>
+                <li><a href="https://www.linkedin.com/in/gabriel-scuzziato-dubiela/?locale=en_US">LinkedIn</a></li>
+            </ul>
+        </nav>
+        <button id="menu-button">Menu</button>
+    </header>
+    <main>
+        <h2>Home</h2>
+        <section class="section1">
+            <h3>Course Work</h3>
+            <nav>
+                <ul>
+                    <li> </li>
+                    <li> </li>
+                    <li> </li>
+                </ul>
+            </nav>
+        </section>
+        <section class="section2">
+            <h3>Brazil</h3>
+            <img src="images/brazil.avif" alt="Brazil" width="280" height="280">
+        </section>
+        <section class="section3">
+            <h3>Web and Computer Programming Certificate</h3>
+            <div class="choose">
+                <button id="All">All</button>
+                <button id="CSE">CSE</button>
+                <button id="WDD">WDD</button>
+            </div>
+            <div id="courses"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Gabriel Dubiela | Brazil </p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+</html>

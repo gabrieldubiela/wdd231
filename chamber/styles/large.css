@@ -13,13 +13,25 @@ body {
     font-family: var(--text-font-family);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
     color: var(--background-color);
     font-family: var(--heading-font-family);
 }
 
+h2 {
+    color: var(--secondary-color);
+    font-family: var(--heading-font-family);
+    margin: 10px 0;
+    padding: 0;
+}
+
+p {
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
 a {
-    color: var(--backgroud-color);
+    color: var(--background-color);
     text-decoration: none;
 }
 
@@ -46,21 +58,21 @@ nav ul {
 
 header {
     background-color: var(--primary-color);
-    color: var(--background-color);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 header div {
     display: flex;
-    gap: 0%;
+    gap: 0;
+    align-items: center;
 }
 
 header div div {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 header nav ul {
@@ -71,18 +83,18 @@ header nav ul {
 }
 
 header img {
-    width: 25%;
-    height: 25%;
+    width: 80px;
+    height: 80px;
 }
-header h1 {
-    padding: 0;
-    margin: 15% 0 0 0;
-}
-
-header p {
+header h1, header p {
     padding: 0;
     margin: 0;
-} 
+    color: var(--background-color);
+}
+
+header button {
+    display: none;
+}
 
 footer {
     background-color: var(--primary-color);
@@ -99,10 +111,11 @@ footer nav {
 
 footer div {
     text-align: left;
-    padding-left: 10%;
+    padding-left: 40px;
 }
 
 footer img {
-    width: 90%;
+    width: 60px;
     height: auto;
+    margin: 10px;
 }

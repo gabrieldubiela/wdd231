@@ -88,6 +88,14 @@
         padding: 10px;
     }
 
+    table {
+        width: 310px;
+    }
+
+    td {
+        word-break: break-word;
+      }
+
     .container {
         grid-template-columns: 1fr;
     }

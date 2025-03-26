@@ -18,12 +18,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    line-height: 1.5;
+    margin: 0 0 10px 0;
+    padding: 0;
 }
 
 a {
     text-decoration: none;
-    color: var(--background-color);
+    color: var(--text-color);
 }
 
 ul {
@@ -50,6 +51,20 @@ header {
 
 header button {
     display: none;
+}
+
+header a {
+    color: var(--background-color);
+}
+
+section {
+    display: flex;
+    align-items: center;
+}
+
+section h2 {
+    margin: 10px 0 0 0;
+    padding: 0;
 }
 
 main {
@@ -130,10 +145,6 @@ main {
     border-radius: 10px;
 }
 
-.card a {
-    color: var(--text-color);
-}
-
 table {
     border-collapse: collapse;
     border: 1px solid var(--secondary-color);
@@ -149,10 +160,6 @@ tbody tr:nth-child(even) {
     background-color: var(--secondary-color);
 }
 
-tbody a {
-    color: var(--text-color);
-}
-
 td, th {
     padding: 10px;
 }
@@ -163,10 +170,8 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     margin-top: 20px;
-}
-
-footer p {
     color: var(--background-color);
+    padding: 30px;
 }
 
 footer nav {
@@ -177,6 +182,5 @@ footer nav {
 
 footer div {
     text-align: left;
-    padding-left: 30px;
     width: 300px;
 }

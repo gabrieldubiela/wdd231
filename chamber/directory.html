@@ -12,10 +12,12 @@
     <meta property="og:image" content="images/brazil.avif">
     <meta property="og:url" content="https://gabrieldubiela.github.io/wdd231/chamber/directory.html">
     <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/large.css">
     <link rel="stylesheet" href="styles/small.css">
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/business.js" defer></script>
 </head>
 <body>
     <header>
@@ -38,7 +40,29 @@
     </header>
     <main>
         <h2>Directory</h2>
-        <p>Find the contact information of the members of the Chamber of Commerce of Santos.</p>
+        <div class="buttons">
+            <button id="grid-button" class="switch-button">
+                <div class="grid-icon">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </button>
+              <button id="list-button" class="switch-button">
+                <div class="list-icon">
+                  <div></div>
+                  <div class="middle"></div>
+                  <div class="short"></div>
+                </div>
+              </button>
+        </div>
+        <div class="container"></div>
     </main>
     <footer>
         <div>

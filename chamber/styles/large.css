@@ -118,6 +118,11 @@ main {
     cursor: pointer;
     padding: 5px;
   }
+
+  .switch-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
   
   .grid-icon {
     display: grid;
@@ -159,6 +164,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    justify-content: center;
 }
 
 .card {
@@ -177,6 +183,29 @@ main {
 
 .card a {
     color: var(--text-color);
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid var(--secondary-color);
+    text-align: center;
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+tbody a {
+    color: var(--text-color);
+}
+
+td, th {
+    padding: 10px;
 }
 
 footer {

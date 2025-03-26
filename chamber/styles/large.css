@@ -9,36 +9,31 @@
 
 body {
     background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--text-font-family);
+    width: 960px;
 }
 
-h1, h3, h4, h5, h6 {
-    color: var(--background-color);
-    font-family: var(--heading-font-family);
-}
-
-h2 {
-    color: var(--primary-color);
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font-family);
     margin: 10px 0;
     padding: 0;
 }
 
 p {
-    color: var(--text-color);
     line-height: 1.5;
 }
 
 a {
-    color: var(--background-color);
     text-decoration: none;
+    color: var(--background-color);
 }
 
-nav ul {
+ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
 .active {
@@ -46,37 +41,12 @@ nav ul {
     font-weight: bold;
 }
 
-.button-primary {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-}
-
-.button-secondary {
-    background-color: var(--secondary-color);
-    color: var(--background-color);
-}
-
 header {
     background-color: var(--primary-color);
+    color: var(--background-color);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-header img {
-    width: 80px;
-    height: 80px;
-}
-header h1, header p {
-    padding: 0;
-    margin: 0;
-    color: var(--background-color);
 }
 
 header button {
@@ -138,14 +108,6 @@ main {
     height: 6px;
     border-radius: 3px;
   }
-  
-  .list-icon .middle {
-    width: 60%;
-  }
-  
-  .list-icon .short {
-    width: 40%;
-  }
 
 .container {
     display: grid;
@@ -160,6 +122,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    width: 300px;
 }
 
 .card img {
@@ -210,15 +173,11 @@ footer p {
 footer nav {
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
 footer div {
     text-align: left;
     padding-left: 30px;
-}
-
-footer img {
-    width: 60px;
-    height: auto;
-    margin: 10px;
+    width: 300px;
 }

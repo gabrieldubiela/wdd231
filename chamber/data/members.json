@@ -5,7 +5,7 @@
         "address": "Av. Conselheiro Rodrigues Alves, s/n - Macuco, Santos - SP",
         "phone": "(13) 3202-1000",
         "website": "https://www.portodesantos.com.br",
-        "image": "porto-de-santos.jpg",
+        "image": "porto-de-santos.webp",
         "membership": 3,
         "description": "Latin America's largest port complex",
         "category": "Shipping & Logistics"
@@ -15,7 +15,7 @@
         "address": "Rua Princesa Isabel, 77 - Vila Belmiro, Santos - SP",
         "phone": "(13) 3257-4000",
         "website": "https://www.santosfc.com.br",
-        "image": "santos-fc.png",
+        "image": "santos-fc.webp",
         "membership": 2,
         "description": "Legendary football club home of Pelé",
         "category": "Sports"
@@ -55,7 +55,7 @@
         "address": "Rua Oswaldo Cruz, 266 - Boqueirão, Santos - SP",
         "phone": "(13) 3202-7100",
         "website": "https://www.unisanta.br",
-        "image": "universidade-santa-cecilia.png",
+        "image": "universidade-santa-cecilia.webp",
         "membership": 1,
         "description": "Leading regional university",
         "category": "Education"
@@ -65,7 +65,7 @@
         "address": "Av. Bartolomeu de Gusmão, 192 - Ponta da Praia, Santos - SP",
         "phone": "(13) 3261-4651",
         "website": "https://www.ostradamus.com.br",
-        "image": "ostradamus-restaurante.png",
+        "image": "ostradamus-restaurante.webp",
         "membership": 2,
         "description": "Award-winning seafood restaurant",
         "category": "Food & Beverage"

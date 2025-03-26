@@ -133,7 +133,7 @@ main {
     height: 80%;
   }
   
-  .grid-icon div {
+  .grid-icon span {
     background-color: var(--primary-color);
     border-radius: 2px;
   }
@@ -146,7 +146,7 @@ main {
     height: 70%; 
   }
   
-  .list-icon div {
+  .list-icon span {
     background-color: var(--primary-color);
     height: 6px;
     border-radius: 3px;

@@ -82,6 +82,12 @@ main div {
 	justify-content: space-between;
 }
 
+.action-button {
+	position: absolute;
+	bottom: 20px;
+	left: 30px;
+}
+
 .buttons {
     display: flex;
     justify-content: center;

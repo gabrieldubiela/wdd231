@@ -11,17 +11,22 @@ async function getMembersData() {
   getMembersData();
 
   const DisplayMembers = (members) => {
-    const filterMembers = members.filter(member => member.membership === 3); 
-    filterMembers.forEach((member) => {
+    const filterMembers = members.filter(member => member.membership === member.membership === 'gold' || member.membership === 'silver'); 
+    const randomMembers = getRandomElements(filterMembers, 3);
+    randomMembers.forEach((member) => {
       let card = document.createElement('div');
+      let name = document.createElement('h4');
       let logo = document.createElement('img');
       let address = document.createElement('p');
       let phone = document.createElement('p');
       let website = document.createElement('a');
+      let membership = document.createElement('p');
   
+      name.textContent = member.name;
       address.textContent = member.address;
       phone.textContent = member.phone;
       website.textContent = member.website;
+      membership.textContent = member.membership;
 
       website.setAttribute('href', member.website);
       logo.setAttribute('src', `images/${member.image}`);	
@@ -29,10 +34,12 @@ async function getMembersData() {
       logo.setAttribute('loading', 'lazy');
       card.classList.add('card');
   
+      card.appendChild(name);
       card.appendChild(logo); 
       card.appendChild(address);
       card.appendChild(phone);
       card.appendChild(website);
+      card.appendChild(membership);
   
       container.appendChild(card);
     }); 

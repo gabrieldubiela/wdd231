@@ -76,6 +76,11 @@ main img {
 	height: auto;
 }
 
+main div {
+	display: flex;
+	margin: 10px;
+}
+
 .buttons {
     display: flex;
     justify-content: center;

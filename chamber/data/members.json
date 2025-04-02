@@ -6,7 +6,7 @@
         "phone": "(13) 3202-1000",
         "website": "https://www.portodesantos.com.br",
         "image": "porto-de-santos.webp",
-        "membership": 3,
+        "membership": gold,
         "description": "Latin America's largest port complex",
         "category": "Shipping & Logistics"
       },
@@ -16,7 +16,7 @@
         "phone": "(13) 3257-4000",
         "website": "https://www.santosfc.com.br",
         "image": "santos-fc.webp",
-        "membership": 3,
+        "membership": gold,
         "description": "Legendary football club home of Pelé",
         "category": "Sports"
       },
@@ -26,7 +26,7 @@
         "phone": "(13) 3213-1750",
         "website": "https://www.museudocafe.org.br",
         "image": "museu-do-cafe.svg",
-        "membership": 1,
+        "membership": bronze,
         "description": "Historical coffee trade museum",
         "category": "Tourism"
       },
@@ -36,7 +36,7 @@
         "phone": "(13) 4003-4133",
         "website": "https://praiamarshopping.com.br",
         "image": "praiamar-shopping.webp",
-        "membership": 3,
+        "membership": gold,
         "description": "Largest shopping mall in Baixada Santista",
         "category": "Retail"
       },
@@ -46,7 +46,7 @@
         "phone": "(13) 4009-7097",
         "website": "https://anacosta.com.br",
         "image": "hospital-ana-costa.svg",
-        "membership": 2,
+        "membership": silver,
         "description": "Premium private hospital",
         "category": "Healthcare"
       },
@@ -56,7 +56,7 @@
         "phone": "(13) 3202-7100",
         "website": "https://www.unisanta.br",
         "image": "universidade-santa-cecilia.webp",
-        "membership": 1,
+        "membership": bronze,
         "description": "Leading regional university",
         "category": "Education"
       },
@@ -66,7 +66,7 @@
         "phone": "(13) 3261-4651",
         "website": "https://www.ostradamus.com.br",
         "image": "ostradamus-restaurante.webp",
-        "membership": 2,
+        "membership": silver,
         "description": "Award-winning seafood restaurant",
         "category": "Food & Beverage"
       }

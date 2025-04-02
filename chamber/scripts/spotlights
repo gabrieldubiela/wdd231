@@ -11,8 +11,8 @@ async function getMembersData() {
   getMembersData();
 
   const DisplayMembers = (members) => {
-    container.innerHTML = "";
-    members.forEach((member) => {
+    const filterMembers = members.filter(member => member.membership === 3); 
+    filterMembers.forEach((member) => {
       let card = document.createElement('div');
       let logo = document.createElement('img');
       let address = document.createElement('p');

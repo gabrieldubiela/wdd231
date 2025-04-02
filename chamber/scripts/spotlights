@@ -1,1 +1,39 @@
+const membersData = 'data/members.json';
+const container = document.querySelector('.container');
 
+async function getMembersData() {
+    const response = await fetch(membersData);
+    const data = await response.json();
+    console.table(data.members);
+    DisplayMembers(data.members);
+  }
+  
+  getMembersData();
+
+  const DisplayMembers = (members) => {
+    container.innerHTML = "";
+    members.forEach((member) => {
+      let card = document.createElement('div');
+      let logo = document.createElement('img');
+      let address = document.createElement('p');
+      let phone = document.createElement('p');
+      let website = document.createElement('a');
+  
+      address.textContent = member.address;
+      phone.textContent = member.phone;
+      website.textContent = member.website;
+
+      website.setAttribute('href', member.website);
+      logo.setAttribute('src', `images/${member.image}`);	
+      logo.setAttribute('alt', member.name); 
+      logo.setAttribute('loading', 'lazy');
+      card.classList.add('card');
+  
+      card.appendChild(logo); 
+      card.appendChild(address);
+      card.appendChild(phone);
+      card.appendChild(website);
+  
+      container.appendChild(card);
+    }); 
+  }

@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    margin: 0 0 10px 0;
+    margin: 10px 0;
     padding: 0;
 }
 
@@ -28,9 +28,9 @@ a {
 }
 
 ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -63,12 +63,12 @@ section {
 }
 
 section h2 {
-    margin: 10px 0 0 0;
+    margin: 10px 0;
     padding: 0;
 }
 
 main {
-    padding-left: 30px;
+    padding: 30px 0;
 }
 
 main img {
@@ -79,6 +79,7 @@ main img {
 main div {
 	display: flex;
 	margin: 10px;
+	justify-content: space-between;
 }
 
 .buttons {

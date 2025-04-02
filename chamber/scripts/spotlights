@@ -11,7 +11,7 @@ async function getMembersData() {
   getMembersData();
 
   const DisplayMembers = (members) => {
-    const filterMembers = members.filter(member => member.membership === member.membership === 'gold' || member.membership === 'silver'); 
+    const filterMembers = members.filter(member => member.membership === 'gold' || member.membership === 'silver');
     const randomMembers = getRandomElements(filterMembers, 3);
     randomMembers.forEach((member) => {
       let card = document.createElement('div');

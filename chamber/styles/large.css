@@ -71,6 +71,11 @@ main {
     padding-left: 30px;
 }
 
+main img {
+	width: 100%;
+	height: auto;
+}
+
 .buttons {
     display: flex;
     justify-content: center;

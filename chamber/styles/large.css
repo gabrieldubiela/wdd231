@@ -76,7 +76,7 @@ main img {
 	height: auto;
 }
 
-main div {
+main > div {
 	display: flex;
 	margin: 10px;
 	justify-content: space-between;

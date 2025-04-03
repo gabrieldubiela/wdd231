@@ -77,6 +77,18 @@ main > div {
 	justify-content: space-between;
 }
 
+main section {
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    background-color: var(--primary-color);
+}
+
+main section > div {
+    display: flex;
+    background-color: var(--secondary-color);
+}
+
 .action-button {
 	position: absolute;
 	bottom: 15px;

@@ -85,7 +85,7 @@ main > div {
     height: 50px;
     border: 2px solid var(--primary-color);
 	background-color: var(--secondary-color);
-    opacity: 0.5;
+    opacity: 0.75;
     border-radius: 5px;
     display: flex;
     justify-content: center;

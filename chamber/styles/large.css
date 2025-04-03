@@ -84,12 +84,13 @@ main > div {
 
 .action-button {
 	position: absolute;
-	bottom: 20px;
+	bottom: 15px;
 	left: 30px;
 	width: 200px;
     height: 50px;
     border: 2px solid var(--primary-color);
 	background-color: var(--secondary-color);
+    opacity: 0.5;
     border-radius: 5px;
     display: flex;
     justify-content: center;

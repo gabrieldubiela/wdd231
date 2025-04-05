@@ -78,8 +78,9 @@ main img {
 }
 
 main > div {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
 }
 
 main section {

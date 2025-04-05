@@ -6,9 +6,11 @@ const weatherForecast = document.querySelector('#weatherForecast');
 async function apiFetch() {
   const response = await fetch(url);
   const data = await response.json();
+const responseF = await fetch(forecastUrl);
+  const dataF = await response.json();
 
   displayCurrentWeather(data);
-  displayForecast(data);
+  displayForecast(dataF);
 }
 
 function displayCurrentWeather(data) {
@@ -49,7 +51,6 @@ icon.alt = data.weather[0].description;
   }
 
   function displayForecast(data) {
-  // Agrupa as temperaturas por dia
   const dailyData = {};
 
   data.list.forEach(item => {
@@ -60,10 +61,9 @@ icon.alt = data.weather[0].description;
       dailyData[day] = [];
     }
 
-    dailyData[day].push(item.main.temp);
+ dailyData[day].push(item.main.temp);
   });
 
-  // Pega os 3 primeiros dias (hoje, amanhã e depois)
   const days = Object.keys(dailyData).slice(0, 3);
 
   days.forEach(day => {

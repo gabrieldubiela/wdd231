@@ -111,9 +111,6 @@ main section > div {
 	background-color: var(--secondary-color);
     opacity: 0.75;
     border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
     padding: 5px;
   }

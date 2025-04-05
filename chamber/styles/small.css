@@ -97,6 +97,11 @@
         grid-template-columns: 1fr;
     }
 
+    .action-button {
+        width: 20px;
+        height: 5px;
+      }
+
     table {
         width: 310px;
     }

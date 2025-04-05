@@ -113,6 +113,8 @@ main section > div {
     border-radius: 5px;
     cursor: pointer;
     padding: 5px;
+    align-items: center;
+    text-align: center;
   }
 
   .action-button:active {

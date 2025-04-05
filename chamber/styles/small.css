@@ -1,4 +1,7 @@
 @media (max-width: 320px) {
+    body {
+        max-width: 320px;
+    }
 
     #hamburguer-button {
         display: block;

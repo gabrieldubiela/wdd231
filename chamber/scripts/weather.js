@@ -7,7 +7,7 @@ async function apiFetch() {
   const response = await fetch(url);
   const data = await response.json();
 const responseF = await fetch(forecastUrl);
-  const dataF = await response.json();
+  const dataF = await responseF.json();
 
   displayCurrentWeather(data);
   displayForecast(dataF);

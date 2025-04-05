@@ -11,7 +11,8 @@ async function apiFetch() {
 }
 
 function displayCurrentWeather(data) {
-    const icon = document.createElement('div');
+    const icon = document.createElement('img');
+    const info = document.createElement('div');
     const temp = document.createElement('p');
     const description = document.createElement('p');
     const high = document.createElement('p');
@@ -35,13 +36,14 @@ function displayCurrentWeather(data) {
     icon.innerHTML = `<img src="${iconUrl}" alt="${data.weather[0].description}">`;
   
     currentWeather.appendChild(icon);
-    currentWeather.appendChild(temp);
-    currentWeather.appendChild(description);
-    currentWeather.appendChild(high);
-    currentWeather.appendChild(low);
-    currentWeather.appendChild(humidity);
-    currentWeather.appendChild(sunrise);
-    currentWeather.appendChild(sunset);
+    info.appendChild(temp);
+    info.appendChild(description);
+    info.appendChild(high);
+    info.appendChild(low);
+    info.appendChild(humidity);
+    info.appendChild(sunrise);
+    info.appendChild(sunset);
+    currentWeather.appendChild(info);
   }
 
   function displayForecast(data) {

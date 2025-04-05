@@ -53,7 +53,7 @@ function displayForecast(data) {
 
     data.list.forEach(item => {
     const date = new Date(item.dt * 1000);
-    const day = date.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+    const day = date.toLocaleDateString(undefined, { weekday: 'long' });
 
     if (!dailyData[day]) {
       dailyData[day] = [];

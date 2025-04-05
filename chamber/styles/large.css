@@ -155,7 +155,7 @@ main section > div {
 #weatherForecast {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 3px;
 }
 
   .grid-icon {

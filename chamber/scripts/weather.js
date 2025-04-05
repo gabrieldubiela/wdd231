@@ -32,9 +32,10 @@ function displayCurrentWeather(data) {
     sunrise.textContent = `Sunrise: ${sunriseDate.toLocaleTimeString()}`;
     sunset.textContent = `Sunset: ${sunsetDate.toLocaleTimeString()}`;
   
-    const iconUrl = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-    icon.innerHTML = `<img src="${iconUrl}" alt="${data.weather[0].description}">`;
-  
+
+icon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+ 
+icon.alt = data.weather[0].description;
     currentWeather.appendChild(icon);
     info.appendChild(temp);
     info.appendChild(description);

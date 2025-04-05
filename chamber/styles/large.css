@@ -117,7 +117,7 @@ main section > div {
     text-align: center;
   }
 
-  .action-button:active {
+.action-button:active {
     transform: translateY(1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -142,7 +142,7 @@ main section > div {
     padding: 5px;
   }
 
-  .switch-button:active {
+.switch-button:active {
     transform: translateY(1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -150,6 +150,12 @@ main section > div {
 #currentWeather img {
     width: 50px;
     height: 50px;
+}
+
+#weatherForecast {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
   .grid-icon {

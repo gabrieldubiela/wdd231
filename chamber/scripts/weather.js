@@ -49,11 +49,31 @@ icon.alt = data.weather[0].description;
   }
 
   function displayForecast(data) {
-    const tomorrow = document.createElement('p');
-    const afterTomorrow = document.createElement('p');
-  
-    weatherForecast.appendChild(tomorrow);
-    weatherForecast.appendChild(afterTomorrow);
-  }
+  // Agrupa as temperaturas por dia
+  const dailyData = {};
+
+  data.list.forEach(item => {
+    const date = new Date(item.dt * 1000);
+    const day = date.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+
+    if (!dailyData[day]) {
+      dailyData[day] = [];
+    }
+
+    dailyData[day].push(item.main.temp);
+  });
+
+  // Pega os 3 primeiros dias (hoje, amanhã e depois)
+  const days = Object.keys(dailyData).slice(0, 3);
+
+  days.forEach(day => {
+    const temps = dailyData[day];
+    const avgTemp = (temps.reduce((a, b) => a + b, 0) / temps.length).toFixed(1);
+
+    const forecastItem = document.createElement('p');
+    forecastItem.textContent = `${day}: ${avgTemp}°C`;
+    weatherForecast.appendChild(forecastItem);
+  });
+}
 
 apiFetch();    

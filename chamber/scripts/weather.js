@@ -6,7 +6,7 @@ const weatherForecast = document.querySelector('#weatherForecast');
 async function apiFetch() {
   const response = await fetch(url);
   const data = await response.json();
-const responseF = await fetch(forecastUrl);
+  const responseF = await fetch(forecastUrl);
   const dataF = await responseF.json();
 
   displayCurrentWeather(data);
@@ -33,12 +33,10 @@ function displayCurrentWeather(data) {
     const sunriseDate = new Date(data.sys.sunrise * 1000);
     const sunsetDate = new Date(data.sys.sunset * 1000);
     sunrise.textContent = `Sunrise: ${sunriseDate.toLocaleTimeString()}`;
-    sunset.textContent = `Sunset: ${sunsetDate.toLocaleTimeString()}`;
-  
+    sunset.textContent = `Sunset: ${sunsetDate.toLocaleTimeString()}`;  
+    icon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`; 
+    icon.alt = data.weather[0].description;
 
-icon.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
- 
-icon.alt = data.weather[0].description;
     currentWeather.appendChild(icon);
     info.appendChild(temp);
     info.appendChild(description);
@@ -50,10 +48,10 @@ icon.alt = data.weather[0].description;
     currentWeather.appendChild(info);
   }
 
-  function displayForecast(data) {
-  const dailyData = {};
+function displayForecast(data) {
+    const dailyData = {};
 
-  data.list.forEach(item => {
+    data.list.forEach(item => {
     const date = new Date(item.dt * 1000);
     const day = date.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
 
@@ -61,19 +59,19 @@ icon.alt = data.weather[0].description;
       dailyData[day] = [];
     }
 
- dailyData[day].push(item.main.temp);
-  });
+    dailyData[day].push(item.main.temp);
+    });
 
-  const days = Object.keys(dailyData).slice(0, 3);
+    const days = Object.keys(dailyData).slice(0, 3);
 
-  days.forEach(day => {
+    days.forEach(day => {
     const temps = dailyData[day];
     const avgTemp = (temps.reduce((a, b) => a + b, 0) / temps.length).toFixed(1);
 
     const forecastItem = document.createElement('p');
     forecastItem.textContent = `${day}: ${avgTemp}°C`;
     weatherForecast.appendChild(forecastItem);
-  });
+    });
 }
 
 apiFetch();    

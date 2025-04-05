@@ -1,4 +1,5 @@
 const url = 'https://api.openweathermap.org/data/2.5/weather?lat=-23.95953755372069&lon=-46.33504514195621&appid=8914a83cc13ec4ee3da68d6b2b2092f7&units=metric';
+const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=-23.95953755372069&lon=-46.33504514195621&appid=8914a83cc13ec4ee3da68d6b2b2092f7&units=metric';
 const currentWeather = document.querySelector('#currentWeather');
 const weatherForecast = document.querySelector('#weatherForecast');
 

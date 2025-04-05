@@ -218,6 +218,8 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+    align-content: center;
+    text-align: center;
     margin-top: 20px;
     color: var(--background-color);
     padding: 30px;

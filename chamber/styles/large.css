@@ -222,5 +222,6 @@ footer {
 
 footer nav {
     display: flex;
+    align-content: center;
     gap: 10px;
 }

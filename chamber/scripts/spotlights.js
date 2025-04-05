@@ -7,7 +7,23 @@ async function getMembersData() {
     console.table(data.members);
     DisplayMembers(data.members);
   }
+
+  function getRandomElements(array, numElements) {
+    if (!array || array.length === 0 || numElements <= 0) {
+      return [];
+    }
   
+    const count = Math.min(numElements, array.length);
+    const shuffled = array.slice();
+  
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+  
+    return shuffled.slice(0, count);
+  }
+
   getMembersData();
 
   const DisplayMembers = (members) => {

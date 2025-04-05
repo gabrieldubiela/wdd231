@@ -220,10 +220,11 @@ footer {
 
 footer nav {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     gap: 10px;
 }
 
 footer div {
     text-align: left;
+    justify-items: center;
 }

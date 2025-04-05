@@ -91,6 +91,7 @@ main section {
 
 main section > div {
     display: flex;
+    color: var(--background-color);
     background-color: var(--secondary-color);
 }
 

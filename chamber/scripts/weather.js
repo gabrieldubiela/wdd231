@@ -48,24 +48,6 @@ function displayCurrentWeather(data) {
     const tomorrow = document.createElement('p');
     const afterTomorrow = document.createElement('p');
   
-    const todayDate = new Date();
-    const tomorrowDate = new Date(todayDate);
-    tomorrowDate.setDate(todayDate.getDate() + 1);
-    const afterTomorrowDate = new Date(todayDate);
-    afterTomorrowDate.setDate(todayDate.getDate() + 2);
-  
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const tomorrowName = daysOfWeek[tomorrowDate.getDay()];
-    const afterTomorrowName = daysOfWeek[afterTomorrowDate.getDay()];
-
-    const tomorrowForecast = data.list[8];
-    const afterTomorrowForecast = data.list[16];
-
-    today.textContent = `Today: ${main.temp}°C`
-    tomorrow.textContent = `${tomorrowName}: ${tomorrowForecast.main.temp}°C`;
-    afterTomorrow.textContent = `${afterTomorrowName}: ${afterTomorrowForecast.main.temp}°C`;
-    
-    weatherForecast.appendChild(today)
     weatherForecast.appendChild(tomorrow);
     weatherForecast.appendChild(afterTomorrow);
   }

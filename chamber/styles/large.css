@@ -98,6 +98,7 @@ main section > div {
     display: flex;
     background-color: var(--secondary-color);
     color: var(--text-color);
+    margin-top: 10px;
 }
 
 .action-button {

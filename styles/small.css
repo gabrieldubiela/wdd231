@@ -113,7 +113,7 @@ nav a {
 	text-align: center;
 	padding: 1rem;
 	text-decoration: none;
- transition: opacity 0.5s ease;
+	transition: opacity 0.5s ease;
 }
 
 @keyframes slideIn {
@@ -124,6 +124,7 @@ nav a {
   100% {
     left: 0;
     opacity: 1;
+    font-size: larger;
   }
 }
 
@@ -132,8 +133,7 @@ nav a {
 }
 
 nav a:hover {
-	font-size: larger;
- animation: slideIn 0.3s forwards;
+ 	animation: slideIn 0.3s forwards;
 }
 
 section {

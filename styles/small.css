@@ -121,17 +121,17 @@ nav a {
   }
   100% {
     font-size: larger;
-    background-color: radial-gradient(circle at center, opacity 0, opacity 0.5, opacity 1);
+    background: radial-gradient(circle at center, transparent 100%, transparent 50%, transparent 0%);
     color: var(--text-color);
   }
 }
 
-.active {
-	text-decoration: underline;
-}
-
 nav a:hover {
  	animation: backgroundGradient 0.5s forwards;
+}
+
+.active {
+	text-decoration: underline;
 }
 
 section {

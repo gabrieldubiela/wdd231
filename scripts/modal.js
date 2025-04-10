@@ -1,4 +1,3 @@
-
 function displayCourseDetails(course) {
   courseDetails.innerHTML = '';
   courseDetails.innerHTML = `

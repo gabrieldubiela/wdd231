@@ -132,6 +132,8 @@ document.getElementById("CSE").addEventListener("click", () => filterCourses("CS
 
 renderCourses(courses);
 
+const courseDetails = document.getElementById("courseDetails");
+
 function displayCourseDetails(course) {
   courseDetails.innerHTML = '';
   courseDetails.innerHTML = `

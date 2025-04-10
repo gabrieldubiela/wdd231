@@ -1,7 +1,7 @@
 const memberships = [
   {
     id: "np",
-    title: "NP Membership",
+    title: "Non-Profit Membership",
     monthly: 0,
     benefits: [
       "Access to free events",

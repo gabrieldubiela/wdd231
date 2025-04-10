@@ -90,7 +90,7 @@ function renderCourses(coursesArray) {
             courseCard.style.backgroundColor = "#12103d";
             courseCard.style.color = "#f9f9f9"
         }
-        courseDiv.addEventListener('click', () => {
+        courseCard.addEventListener('click', () => {
         displayCourseDetails(course);
     });
         coursesCardsContainer.appendChild(courseCard);

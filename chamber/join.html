@@ -18,6 +18,7 @@
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/spotlights" defer></script>
+    <script src="modals.js" defer></script>
 </head>
 <body>
     <header>
@@ -31,15 +32,80 @@
         <button id="hamburguer-button" aria-label="Menu Button"><span></span></button>
         <nav id="animate">
             <ul>
-                <li><a href="https://gabrieldubiela.github.io/wdd231/chamber/index.html" class="active">Home</a></li>
+                <li><a href="https://gabrieldubiela.github.io/wdd231/chamber/index.html">Home</a></li>
                 <li><a href=https://gabrieldubiela.github.io/wdd231/chamber/directory.html>Directory</a></li>
-                <li><a href="https://gabrieldubiela.github.io/wdd231/chamber/join.html">Join</a></li>
+                <li><a href="https://gabrieldubiela.github.io/wdd231/chamber/join.html" class="active">Join</a></li>
                 <li><a href="https://gabrieldubiela.github.io/wdd231/chamber/discover.html">Discover</a></li>
             </ul>
         </nav>
     </header>
     <main>
-     
+        <h1>Join</h1>
+        <form method="get" action="thankyou.html">
+            <label>First Name:
+                <input type="text" name="firstName" title="First Name" required autocomplete="given-name">
+            </label>
+      
+            <label>Last Name:
+                <input type="text" name="lastName" title="Last Name" required autocomplete="family-name">
+            </label>
+      
+            <label>Organizational Title:
+                <input type="text" name="orgTitle" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
+            </label>
+
+            <label>Organization Name:
+                <input type="text" name="organization" title="Organization Name" required autocomplete="organization">
+            </label>
+      
+            <label>Email:
+                <input type="email" name="email" title="Email" required autocomplete="email" placeholder="example@example.com">
+            </label>
+      
+            <label>Mobile Phone:
+                <input type="tel" name="mobile" title="Mobile Phone" required autocomplete="tel">
+            </label>
+      
+            <label>Membership Level:
+                <select name="membershipLevel" title="Membership Level">
+                    <option value="np">Non-Profit Membership</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+            </label>
+      
+            <label>Business/Organization Description:
+                  <textarea name="description" title="Business Description"></textarea>
+            </label>
+      
+            <input type="hidden" name="timestamp" id="timestamp">
+      
+            <input type="submit" value="Submit Application">
+        </form>
+      
+        <Aside>
+            <h2>More info about Membership</h2>
+            <div>
+                <h3>NP Membership</h3>
+                <a href="#" onclick="openModal('modal-np')">More Info</a>
+            </div>
+            <div>
+                <h3>Bronze Membership</h3>
+                <a href="#" onclick="openModal('modal-bronze')">More Info</a>
+            </div>
+            <div>
+                <h3>Silver Membership</h3>
+                <a href="#" onclick="openModal('modal-silver')">More Info</a>
+            </div>
+            <div>
+                <h3>Gold Membership</h3>
+                <a href="#" onclick="openModal('modal-gold')">More Info</a>
+            </div>
+        </Aside>
+
+        <div id="modals-container"></div>
+
     </main>
     <footer>
         <div>

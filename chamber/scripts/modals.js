@@ -11,7 +11,7 @@ const memberships = [
   {
     id: "bronze",
     title: "Bronze Membership",
-    monthly: 100,
+    monthly: 10,
     benefits: [
       "Access to free events",
       "Discounts for non-profit organizations",
@@ -22,7 +22,7 @@ const memberships = [
   {
     id: "silver",
     title: "Silver Membership",
-    monthly: 200,
+    monthly: 20,
     benefits: [
       "Access to free events",
       "Discounts for non-profit organizations",
@@ -35,7 +35,7 @@ const memberships = [
   {
     id: "gold",
     title: "Gold Membership",
-    monthly: 300,
+    monthly: 30,
     benefits: [
       "Access to free events",
       "Discounts for non-profit organizations",
@@ -64,13 +64,14 @@ memberships.forEach((level) => {
 
   const modal = document.createElement("dialog");
   modal.id = `${level.id}-modal`;
+  const benefitsList = level.benefits.map(benefit => `<li>${benefit}</li>`).join("");
   modal.innerHTML = `
-    <h2>${level.title}</h2>
-    <p><strong>Monthly Fee:</strong> $${level.monthly}</p>
-    <ul>
-      ${level.benefits.map(benefit => `<li>${benefit}</li>`).join("")}
-    </ul>
-    <button class="close-btn">Close</button>
+    <div class="modal-content">
+      <h2>${level.title}</h2>
+      <p><strong>Monthly Fee:</strong> $${level.monthly}</p>
+      <ul>${benefitsList}</ul>
+      <button class="close-btn">Close</button>
+    </div>
   `;
   modalsContainer.appendChild(modal);
 });

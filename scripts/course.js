@@ -132,7 +132,7 @@ document.getElementById("CSE").addEventListener("click", () => filterCourses("CS
 
 renderCourses(courses);
 
-const courseDetails = document.getElementById("courseDetails");
+const courseDetails = document.getElementById("course-details");
 
 function displayCourseDetails(course) {
   courseDetails.innerHTML = '';

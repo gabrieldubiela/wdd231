@@ -118,6 +118,7 @@ nav a {
 
 @keyframes backgroundGradient {
   0% {
+    background: var(--primary-color);
   }
   100% {
     font-size: larger;

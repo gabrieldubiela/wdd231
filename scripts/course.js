@@ -90,6 +90,9 @@ function renderCourses(coursesArray) {
             courseCard.style.backgroundColor = "#12103d";
             courseCard.style.color = "#f9f9f9"
         }
+        courseDiv.addEventListener('click', () => {
+        displayCourseDetails(course);
+    });
         coursesCardsContainer.appendChild(courseCard);
     });
 }
@@ -146,7 +149,3 @@ function displayCourseDetails(course) {
     courseDetails.close();
   });
 }
-
-courseDiv.addEventListener('click', () => {
-      displayCourseDetails(course);
-    });

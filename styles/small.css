@@ -121,7 +121,7 @@ nav a {
   }
   100% {
     font-size: larger;
-    background-image: radial-gradient(circle at center, opacity 0, opacity 0.5, opacity 1);
+    background-color: radial-gradient(circle at center, opacity 0, opacity 0.5, opacity 1);
     color: var(--text-color);
   }
 }

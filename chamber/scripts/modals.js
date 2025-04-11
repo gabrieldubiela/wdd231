@@ -83,3 +83,17 @@ bronzeMembership.addEventListener("click", () => {
 npMembership.addEventListener("click", () => {
   displayMembershipBenefits(memberships[0]);
 });
+
+const timestampInput = document.getElementById("timestamp");
+
+if (timestampInput) {
+    const now = new Date().toISOString();
+    timestampInput.value = now;
+}
+
+const form = document.querySelector("form");
+form.addEventListener("submit", function () {
+    if (timestampInput) {
+        timestampInput.value = new Date().toISOString();
+    }
+});

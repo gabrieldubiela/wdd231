@@ -127,4 +127,9 @@
         padding: 1rem 0;
         text-align: center;
     }
+
+    
+    .join-container {
+        grid-template-columns: 1fr;
+    }
 }

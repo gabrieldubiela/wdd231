@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/small.css">
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
-    <script src="modals.js" defer></script>
+    <script src="scripts/modals.js" defer></script>
 </head>
 <body>
     <header>
@@ -40,70 +40,72 @@
     </header>
     <main>
         <h1>Join</h1>
-        <form method="get" action="thankyou.html">
-            <label>First Name:
-                <input type="text" name="firstName" title="First Name" required autocomplete="given-name">
-            </label>
-      
-            <label>Last Name:
-                <input type="text" name="lastName" title="Last Name" required autocomplete="family-name">
-            </label>
-      
-            <label>Organizational Title:
-                <input type="text" name="orgTitle" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
-            </label>
+        <div class="join-container">
+                <form method="get" action="thankyou.html">
+                    <label>First Name:
+                        <input type="text" name="firstName" title="First Name" required autocomplete="given-name">
+                    </label>
+            
+                    <label>Last Name:
+                        <input type="text" name="lastName" title="Last Name" required autocomplete="family-name">
+                    </label>
+            
+                    <label>Organizational Title:
+                        <input type="text" name="orgTitle" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\-\s]{7,}">
+                    </label>
 
-            <label>Organization Name:
-                <input type="text" name="organization" title="Organization Name" required autocomplete="organization">
-            </label>
+                    <label>Organization Name:
+                        <input type="text" name="organization" title="Organization Name" required autocomplete="organization">
+                    </label>
+            
+                    <label>Email:
+                        <input type="email" name="email" title="Email" required autocomplete="email" placeholder="example@example.com">
+                    </label>
+            
+                    <label>Mobile Phone:
+                        <input type="tel" name="mobile" title="Mobile Phone" required autocomplete="tel">
+                    </label>
+            
+                    <label>Membership Level:
+                        <select name="membershipLevel" title="Membership Level">
+                            <option value="np">Non-Profit Membership (free)</option>
+                            <option value="bronze">Bronze Membership ($ 100)</option>
+                            <option value="silver">Silver Membership ($ 200)</option>
+                            <option value="gold">Gold Membership ($ 300)</option>
+                        </select>
+                    </label>
+            
+                    <label>Business/Organization Description:
+                        <textarea name="description" title="Business Description"></textarea>
+                    </label>
+            
+                    <input type="hidden" name="timestamp" id="timestamp">
+            
+                    <input type="submit" value="Submit Application">
+                </form>
       
-            <label>Email:
-                <input type="email" name="email" title="Email" required autocomplete="email" placeholder="example@example.com">
-            </label>
-      
-            <label>Mobile Phone:
-                <input type="tel" name="mobile" title="Mobile Phone" required autocomplete="tel">
-            </label>
-      
-            <label>Membership Level:
-                <select name="membershipLevel" title="Membership Level">
-                    <option value="np">Non-Profit Membership (free)</option>
-                    <option value="bronze">Bronze Membership ($ 100)</option>
-                    <option value="silver">Silver Membership ($ 200)</option>
-                    <option value="gold">Gold Membership ($ 300)</option>
-                </select>
-            </label>
-      
-            <label>Business/Organization Description:
-                  <textarea name="description" title="Business Description"></textarea>
-            </label>
-      
-            <input type="hidden" name="timestamp" id="timestamp">
-      
-            <input type="submit" value="Submit Application">
-        </form>
-      
-        <Aside>
-            <h2>More info about Membership</h2>
-            <div>
-                <h3>NP Membership</h3>
-                <a href="#" id="np">More Info</a>
-            </div>
-            <div>
-                <h3>Bronze Membership</h3>
-                <a href="#" id="bronze">More Info</a>
-            </div>
-            <div>
-                <h3>Silver Membership</h3>
-                <a href="#" id="silver">More Info</a>
-            </div>
-            <div>
-                <h3>Gold Membership</h3>
-                <a href="#" id="gold">More Info</a>
-            </div>
+            <Aside>
+                <h2>More info about Membership</h2>
+                <section>
+                    <h3>NP Membership</h3>
+                    <a href="#" id="np">More Info</a>
+                </section>
+                <section>
+                    <h3>Bronze Membership</h3>
+                    <a href="#" id="bronze">More Info</a>
+                </section>
+                <section>
+                    <h3>Silver Membership</h3>
+                    <a href="#" id="silver">More Info</a>
+                </section>
+                <section>
+                    <h3>Gold Membership</h3>
+                    <a href="#" id="gold">More Info</a>
+                </section>
 
-            <dialog id="membershipBenefits"></dialog>
-        </Aside>
+                <dialog id="membershipBenefits"></dialog>
+            </Aside>
+        </div>
 
     </main>
     <footer>
@@ -114,7 +116,7 @@
             <p>contact@santoscc.org</p>
             <p>(13) 99999-9999</p>
         </div>
-        <nav>
+        <nav class="flex-container">
             <a href="https://www.youtube.com/">
                 <img src="images/youtube.webp" alt="Youtube" width="60" height="60">
             </a>

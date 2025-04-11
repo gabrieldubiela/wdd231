@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinScope Tools - Site Plan</title>
+  <
+</head>
+<body>
+  <h1>Site Plan: FinScope Tools</h1>
+
+  <h2>Site Name</h2>
+  <p><strong>FinScope Tools</strong> was selected as the name because it reflects the purpose of the website: providing clear tools and scope for making better financial decisions. The name combines "Finance" and "Scope", indicating a broad and insightful view of personal investment opportunities.</p>
+  <p class="accent">Optional domain availability: finscope-tools.com</p>
+
+  <h2>Site Purpose</h2>
+  <p>The site provides users with personal finance tools and information including current investment rates, inflation data, and stock market performance such as Nasdaq and Dow Jones. It offers an interactive investment calculator and comparison tools to evaluate different investment strategies. Live financial data is fetched from free APIs to ensure accuracy and up-to-date insights.</p>
+
+  <h2>Scenarios</h2>
+  <ul>
+    <li>How can I compare historical stock market returns with inflation?</li>
+    <li>What’s the best investment calculator for comparing multiple options over time?</li>
+  </ul>
+
+  <h2>Color Schema</h2>
+  <ul>
+    <li><span class="accent">Primary Color:</span> #005f73 – Used for headings and navigation highlights.</li>
+    <li><span class="accent">Accent Color:</span> #0a9396 – Used for links, buttons, and emphasis text.</li>
+    <li><span class="accent">Background Color:</span> #f5f7fa – Light and clean background to improve readability.</li>
+    <li><span class="accent">Typeface Color:</span> #2e2e2e – Dark gray for paragraph text to avoid harsh contrast.</li>
+  </ul>
+
+  <h2>Typography</h2>
+  <ul>
+    <li><strong>Segoe UI</strong> – Used for all body text for readability and modern appearance.</li>
+    <li><strong>Tahoma</strong> – Backup font for body and UI elements if Segoe UI is not available.</li>
+    <li><strong>Verdana</strong> – Applied to special captions or disclaimers for legibility at smaller sizes.</li>
+  </ul>
+</body>
+</html>

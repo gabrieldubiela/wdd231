@@ -128,8 +128,7 @@
         text-align: center;
     }
 
-    
     .join-container {
-        grid-template-columns: 1fr;
+        display: block;
     }
 }

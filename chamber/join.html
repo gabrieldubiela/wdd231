@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="styles/small.css">
     <script src="scripts/date.js" defer></script>
     <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/spotlights" defer></script>
     <script src="modals.js" defer></script>
 </head>
 <body>
@@ -88,23 +87,23 @@
             <h2>More info about Membership</h2>
             <div>
                 <h3>NP Membership</h3>
-                <a href="#" onclick="openModal('modal-np')">More Info</a>
+                <a href="#" id="np">More Info</a>
             </div>
             <div>
                 <h3>Bronze Membership</h3>
-                <a href="#" onclick="openModal('modal-bronze')">More Info</a>
+                <a href="#" id="bronze">More Info</a>
             </div>
             <div>
                 <h3>Silver Membership</h3>
-                <a href="#" onclick="openModal('modal-silver')">More Info</a>
+                <a href="#" id="silver">More Info</a>
             </div>
             <div>
                 <h3>Gold Membership</h3>
-                <a href="#" onclick="openModal('modal-gold')">More Info</a>
+                <a href="#" id="gold">More Info</a>
             </div>
-        </Aside>
 
-        <div id="modals-container"></div>
+            <dialog id="membershipBenefits"></dialog>
+        </Aside>
 
     </main>
     <footer>

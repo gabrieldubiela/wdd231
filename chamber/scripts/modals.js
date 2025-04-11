@@ -2,7 +2,7 @@ const memberships = [
   {
     id: "np",
     title: "Non-Profit Membership",
-    monthly: 0,
+    monthly: "Free",
     benefits: [
       "Access to free events",
       "Discounts for non-profit organizations"
@@ -11,7 +11,7 @@ const memberships = [
   {
     id: "bronze",
     title: "Bronze Membership",
-    monthly: 10,
+    monthly: "$ 100",
     benefits: [
       "Access to free events",
       "Discounts for non-profit organizations",
@@ -22,7 +22,7 @@ const memberships = [
   {
     id: "silver",
     title: "Silver Membership",
-    monthly: 20,
+    monthly: "$ 200",
     benefits: [
       "Access to free events",
       "Discounts for non-profit organizations",
@@ -35,7 +35,7 @@ const memberships = [
   {
     id: "gold",
     title: "Gold Membership",
-    monthly: 30,
+    monthly: "$ 300",
     benefits: [
       "Access to free events",
       "Discounts for non-profit organizations",
@@ -49,45 +49,37 @@ const memberships = [
   }
 ];
 
-const cardsContainer = document.getElementById("membership-cards");
-const modalsContainer = document.getElementById("membership-modals");
+const membershipBenefits = document.getElementById("membershipBenefits");
 
-memberships.forEach((level) => {
-  const card = document.createElement("div");
-  card.className = "membership-card";
-  card.innerHTML = `
-    <h3>${level.title}</h3>
-    <p><strong>$${level.monthly}/month</strong></p>
-    <a href="#" data-modal="${level.id}-modal">View Benefits</a>
+function displayMembershipBenefits(membership) {
+  membershipBenefits.innerHTML = '';
+  membershipBenefits.innerHTML = `
+    <button id="closeModal">❌</button>
+    <h3>${membership.title}</h3>
+    <p><strong>Monthly Contribution</strong>: ${membership.monthly}</p>
+    <p>${membership.benefits}</p>
   `;
-  cardsContainer.appendChild(card);
+  membershipBenefits.showModal();
 
-  const modal = document.createElement("dialog");
-  modal.id = `${level.id}-modal`;
-  const benefitsList = level.benefits.map(benefit => `<li>${benefit}</li>`).join("");
-  modal.innerHTML = `
-    <div class="modal-content">
-      <h2>${level.title}</h2>
-      <p><strong>Monthly Fee:</strong> $${level.monthly}</p>
-      <ul>${benefitsList}</ul>
-      <button class="close-btn">Close</button>
-    </div>
-  `;
-  modalsContainer.appendChild(modal);
+  closeModal.addEventListener("click", () => {
+    membershipBenefits.close();
+  });
+}
+
+const goldMembership = document.getElementById("gold");
+const silverMembership = document.getElementById("silver");
+const bronzeMembership = document.getElementById("bronze");
+const npMembership = document.getElementById("np");
+
+goldMembership.addEventListener("click", () => {
+  displayMembershipBenefits(memberships[3]);
 });
-
-cardsContainer.addEventListener("click", function (e) {
-  if (e.target.tagName === "A") {
-    e.preventDefault();
-    const modalId = e.target.dataset.modal;
-    const modal = document.getElementById(modalId);
-    if (modal) modal.showModal();
-  }
+silverMembership.addEventListener("click", () => {
+  displayMembershipBenefits(memberships[2]);
 });
-
-modalsContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("close-btn")) {
-    const dialog = e.target.closest("dialog");
-    if (dialog) dialog.close();
-  }
+bronzeMembership.addEventListener("click", () => {
+  displayMembershipBenefits(memberships[1]);
+});
+npMembership.addEventListener("click", () => {
+  displayMembershipBenefits(memberships[0]);
 });

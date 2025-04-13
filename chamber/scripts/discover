@@ -1,0 +1,24 @@
+document.addEventListener("DOMContentLoaded", () => {
+    fetch('data/places.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.querySelector(".grid-container");
+
+            data.places.forEach(place => {
+                const card = document.createElement("section");
+                card.classList.add("card");
+
+                card.innerHTML = `
+                    <h2>${place.name}</h2>
+                    <figure>
+                        <img src="${place.image}" alt="${place.name}" width="300" height="200">
+                    </figure>
+                    <address>${place.address}</address>
+                    <p>${place.description}</p>
+                    <a href="${place.link}" target="_blank"><button>Learn More</button></a>
+                `;
+
+                container.appendChild(card);
+            });
+        });
+});

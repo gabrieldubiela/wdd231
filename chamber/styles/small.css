@@ -131,4 +131,35 @@
     .join-container {
         display: block;
     }
+
+    .discover-grid {
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6"
+            "card7"
+            "card8";
+        grid-template-columns: 1fr;
+    }
+
+    .discover-card {
+        padding: 10px;
+    }
+
+    .discover-card h2 {
+        font-size: 1rem;
+    }
+
+    .discover-card button {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .discover-card img {
+        max-width: 100%;
+        height: auto;
+    }
 }

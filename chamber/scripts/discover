@@ -22,3 +22,42 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("visitOverlay");
+  const message = document.getElementById("visitMessage");
+  const closeBtn = document.getElementById("closeOverlay");
+
+  const lastVisit = localStorage.getItem("lastVisit");
+  const now = Date.now();
+
+  let displayMessage = "";
+
+  if (!lastVisit) {
+    displayMessage = "Welcome! Let us know if you have any questions.";
+  } else {
+    const diffTime = now - parseInt(lastVisit, 10);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 1) {
+      displayMessage = "Back so soon! Awesome!";
+    } else {
+      displayMessage = `You last visited ${diffDays} day${diffDays > 1 ? 's' : ''} ago.`;
+    }
+  }
+
+  message.textContent = displayMessage;
+  overlay.classList.remove("hidden");
+
+  // Ocultar automaticamente após 5 segundos
+  setTimeout(() => {
+    overlay.classList.add("hidden");
+  }, 5000);
+
+  // Também permite fechar manualmente
+  closeBtn.addEventListener("click", () => {
+    overlay.classList.add("hidden");
+  });
+
+  localStorage.setItem("lastVisit", now);
+});

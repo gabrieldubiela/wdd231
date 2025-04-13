@@ -1,0 +1,22 @@
+{
+  "places": [
+    {
+      "name": "Museu do Café",
+      "image": "images/museu-cafe.webp",
+      "address": "Rua XV de Novembro, 95 - Centro, Santos - SP",
+      "description": "Um dos museus mais famosos da cidade, conta a história do café no Brasil e sua importância econômica.",
+      "link": "https://museudocafe.org.br"
+    },
+    {
+      "name": "Aquário Municipal de Santos",
+      "image": "images/aquario.webp",
+      "address": "Praça Luiz La Scala, s/n - Ponta da Praia, Santos - SP",
+      "description": "Um dos pontos turísticos mais visitados, ideal para famílias e crianças pequenas.",
+      "link": "https://www.turismosantos.com.br"
+    },
+    {
+      "name": "Orquidário Municipal",
+      "image": "images/orquidario.webp",
+      "address": "Praça Washington, s/n - José Menino, Santos - SP",
+      "description": "Jardim botânico com diversas espécies de plantas e animais, ótimo para passeios ao ar livre.",
+      "link": "https://www.t

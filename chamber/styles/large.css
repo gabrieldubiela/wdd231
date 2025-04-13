@@ -326,3 +326,12 @@ dialog button {
     20% {transform: scale(1.05);}
     100% {transform: scale(1);}
 }
+
+.discover-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+    grid-template-areas: 
+        "card1 card2 card3 card4"
+        "card5 card6 card7 card8";
+}

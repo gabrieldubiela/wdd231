@@ -19,4 +19,42 @@
       "image": "images/orquidario.webp",
       "address": "Praça Washington, s/n - José Menino, Santos - SP",
       "description": "Jardim botânico com diversas espécies de plantas e animais, ótimo para passeios ao ar livre.",
-      "link": "https://www.t
+      "link": "https://www.turismosantos.com.br/?q=pt-br/node/125"
+    },
+    {
+      "name": "Monte Serrat",
+      "image": "images/monte-serrat.webp",
+      "address": "Praça Correia de Melo, 33 - Centro, Santos - SP",
+      "description": "Vista panorâmica da cidade, acessível por bondinho ou escadaria com mais de 400 degraus.",
+      "link": "https://www.turismosantos.com.br"
+    },
+    {
+      "name": "Praia do Gonzaga",
+      "image": "images/gonzaga.webp",
+      "address": "Av. Vicente de Carvalho - Gonzaga, Santos - SP",
+      "description": "Praia urbana popular, cercada por comércios, bares e shoppings.",
+      "link": "https://www.turismosantos.com.br"
+    },
+    {
+      "name": "Estação Valongo",
+      "image": "images/valongo.webp",
+      "address": "Largo Marquês de Monte Alegre, 2 - Centro, Santos - SP",
+      "description": "Antiga estação ferroviária do século XIX, com arquitetura histórica e museu ferroviário.",
+      "link": "https://www.turismosantos.com.br"
+    },
+    {
+      "name": "Museu Pelé",
+      "image": "images/museu-pele.webp",
+      "address": "Largo Marquês de Monte Alegre, 1 - Valongo, Santos - SP",
+      "description": "Dedicado à carreira de Pelé, com acervo de fotos, troféus e objetos do Rei do Futebol.",
+      "link": "https://museupele.com.br"
+    },
+    {
+      "name": "Jardim da Orla",
+      "image": "images/jardim-orla.webp",
+      "address": "Av. Presidente Wilson - José Menino até Ponta da Praia, Santos - SP",
+      "description": "O maior jardim de orla do mundo, com 5 km de extensão e paisagismo incrível.",
+      "link": "https://www.turismosantos.com.br"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('data/places.json')
         .then(response => response.json())
         .then(data => {
-            const container = document.querySelector(".grid-container");
+            const container = document.querySelector(".discover-grid");
 
             data.places.forEach(place => {
                 const card = document.createElement("section");

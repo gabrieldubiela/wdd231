@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </figure>
                     <address>${place.address}</address>
                     <p>${place.description}</p>
-                    <a href="${place.link}" target="_blank"><button>Learn More</button></a>
+                    <a href="${place.link}" target="_blank"><button>Learn More About ${place.name}</button></a>
                 `;
 
                 container.appendChild(card);

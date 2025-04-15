@@ -12,35 +12,35 @@
       "image": "images/aquario.webp",
       "address": "Praça Luiz La Scala, s/n - Ponta da Praia, Santos - SP",
       "description": "Um dos pontos turísticos mais visitados, ideal para famílias e crianças pequenas.",
-      "link": "https://www.turismosantos.com.br"
+      "link": "https://www.turismosantos.com.br/?q=pt-br/content/aqu%C3%A1rio"
     },
     {
       "name": "Orquidário Municipal",
       "image": "images/orquidario.webp",
       "address": "Praça Washington, s/n - José Menino, Santos - SP",
       "description": "Jardim botânico com diversas espécies de plantas e animais, ótimo para passeios ao ar livre.",
-      "link": "https://www.turismosantos.com.br/?q=pt-br/node/125"
+      "link": "https://www.turismosantos.com.br/?q=pt-br/content/orquid%C3%A1rio"
     },
     {
       "name": "Monte Serrat",
       "image": "images/monte-serrat.webp",
       "address": "Praça Correia de Melo, 33 - Centro, Santos - SP",
       "description": "Vista panorâmica da cidade, acessível por bondinho ou escadaria com mais de 400 degraus.",
-      "link": "https://www.turismosantos.com.br"
+      "link": "https://www.turismosantos.com.br/?q=pt-br/content/monte-serrat"
     },
     {
-      "name": "Praia do Gonzaga",
-      "image": "images/gonzaga.webp",
-      "address": "Av. Vicente de Carvalho - Gonzaga, Santos - SP",
-      "description": "Praia urbana popular, cercada por comércios, bares e shoppings.",
-      "link": "https://www.turismosantos.com.br"
+      "name": "Teatro Coliseu",
+      "image": "images/teatro-coliseu.webp",
+      "address": "Rua Amador Bueno nº 237 - Centro, Santos - SP",
+      "description": "Maior teatro da cidade, com estilo eclético, belos afrescos e detalhes arquitetônicos, conta com acústica excelente e requintes de decoração que lhe deram fama e o classificaram entre os melhores do país",
+      "link": "https://www.turismosantos.com.br/?q=pt-br/content/teatro-coliseu"
     },
     {
       "name": "Estação Valongo",
       "image": "images/valongo.webp",
       "address": "Largo Marquês de Monte Alegre, 2 - Centro, Santos - SP",
       "description": "Antiga estação ferroviária do século XIX, com arquitetura histórica e museu ferroviário.",
-      "link": "https://www.turismosantos.com.br"
+      "link": "https://www.turismosantos.com.br/?q=pt-br/content/esta%C3%A7%C3%A3o-do-valongo"
     },
     {
       "name": "Museu Pelé",
@@ -54,7 +54,7 @@
       "image": "images/jardim-orla.webp",
       "address": "Av. Presidente Wilson - José Menino até Ponta da Praia, Santos - SP",
       "description": "O maior jardim de orla do mundo, com 5 km de extensão e paisagismo incrível.",
-      "link": "https://www.turismosantos.com.br"
+      "link": "https://www.turismosantos.com.br/?q=pt-br/content/jardim-da-orla"
     }
   ]
 }

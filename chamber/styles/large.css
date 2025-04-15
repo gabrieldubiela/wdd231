@@ -341,6 +341,11 @@ dialog button {
     background-color: var(--primary-color);
 }
 
+.discover-grid img {
+    height: 40px;
+    width: 40px;
+}
+
 .card img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);

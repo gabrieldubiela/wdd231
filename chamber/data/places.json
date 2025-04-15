@@ -2,7 +2,7 @@
   "places": [
     {
       "name": "Museu do Café",
-      "image": "images/museu-cafe.webp",
+      "image": "images/museu-do-cafe.webp",
       "address": "Rua XV de Novembro, 95 - Centro, Santos - SP",
       "description": "Um dos museus mais famosos da cidade, conta a história do café no Brasil e sua importância econômica.",
       "link": "https://museudocafe.org.br"
@@ -37,7 +37,7 @@
     },
     {
       "name": "Estação Valongo",
-      "image": "images/valongo.webp",
+      "image": "images/estacao-valongo.webp",
       "address": "Largo Marquês de Monte Alegre, 2 - Centro, Santos - SP",
       "description": "Antiga estação ferroviária do século XIX, com arquitetura histórica e museu ferroviário.",
       "link": "https://www.turismosantos.com.br/?q=pt-br/content/esta%C3%A7%C3%A3o-do-valongo"
@@ -51,7 +51,7 @@
     },
     {
       "name": "Jardim da Orla",
-      "image": "images/jardim-orla.webp",
+      "image": "images/jardim-da-orla.webp",
       "address": "Av. Presidente Wilson - José Menino até Ponta da Praia, Santos - SP",
       "description": "O maior jardim de orla do mundo, com 5 km de extensão e paisagismo incrível.",
       "link": "https://www.turismosantos.com.br/?q=pt-br/content/jardim-da-orla"

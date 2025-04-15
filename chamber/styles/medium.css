@@ -58,5 +58,89 @@
         position: absolute;
         left: 0;
         width: 100%;
-        height:
+        height: 3px;
+        background-color: var(--background-color);
+        transition: all 0.3s ease;
     }
+
+    #hamburguer-button::before {
+        top: 0;
+    }
+
+    #hamburguer-button::after {
+        bottom: 0;
+    }
+
+    #hamburguer-button span {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 3px;
+        background-color: var(--background-color);
+        transition: all 0.3s ease;
+    }
+
+    #hamburguer-button.open::before {
+        transform: rotate(45deg);
+        top: 50%;
+    }
+
+    #hamburguer-button.open::after {
+        transform: rotate(-45deg);
+        top: 50%;
+    }
+
+    #hamburguer-button.open span {
+        opacity: 0;
+    }
+
+    main > div {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .discover-grid {
+        grid-template-areas:
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .discover-card {
+        padding: 15px;
+    }
+
+    .discover-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .discover-card button {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .join-container {
+        display: block;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        word-break: break-word;
+    }
+}

@@ -49,12 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
   message.textContent = displayMessage;
   overlay.classList.remove("hidden");
 
-  // Ocultar automaticamente após 5 segundos
   setTimeout(() => {
     overlay.classList.add("hidden");
   }, 5000);
 
-  // Também permite fechar manualmente
   closeBtn.addEventListener("click", () => {
     overlay.classList.add("hidden");
   });

@@ -41,10 +41,50 @@
     <section>
       <h2>Popular Tools</h2>
       <ul>
-        <li>Compound Interest Calculator</li>
-        <li>Retirement Planning Estimator</li>
-        <li>Investment Comparison Tool</li>
+        <li><a href="#compound">Compound Interest Calculator</a></li>
+        <li><a href="#retirement">Retirement Planning Estimator</a></li>
+        <li><a href="#comparison">Investment Comparison Tool</a></li>
       </ul>
+    </section>
+
+    <section id="compound">
+      <h2>Compound Interest Calculator</h2>
+      <form id="compoundForm">
+        <label>Initial Investment ($): <input type="number" id="compoundPrincipal" required></label><br>
+        <label>Monthly Contribution ($): <input type="number" id="compoundMonthly" required></label><br>
+        <label>Annual Interest Rate (%): <input type="number" id="compoundRate" step="0.01" required></label><br>
+        <label>Investment Period (Years): <input type="number" id="compoundYears" required></label><br>
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="compoundResult"></div>
+    </section>
+
+    <section id="retirement">
+      <h2>Retirement Planning Estimator</h2>
+      <form id="retirementForm">
+        <label>Current Age: <input type="number" id="currentAge" required></label><br>
+        <label>Retirement Age: <input type="number" id="retirementAge" required></label><br>
+        <label>Current Savings ($): <input type="number" id="currentSavings" required></label><br>
+        <label>Monthly Contribution ($): <input type="number" id="retirementMonthly" required></label><br>
+        <label>Annual Return Rate (%): <input type="number" id="retirementRate" step="0.01" required></label><br>
+        <button type="submit">Estimate</button>
+      </form>
+      <div id="retirementResult"></div>
+    </section>
+
+    <section id="comparison">
+      <h2>Investment Comparison Tool</h2>
+      <form id="comparisonForm">
+        <h3>Investment A</h3>
+        <label>Initial Amount ($): <input type="number" id="aPrincipal" required></label><br>
+        <label>Annual Rate (%): <input type="number" id="aRate" step="0.01" required></label><br>
+        <h3>Investment B</h3>
+        <label>Initial Amount ($): <input type="number" id="bPrincipal" required></label><br>
+        <label>Annual Rate (%): <input type="number" id="bRate" step="0.01" required></label><br>
+        <label>Years: <input type="number" id="compareYears" required></label><br>
+        <button type="submit">Compare</button>
+      </form>
+      <div id="comparisonResult"></div>
     </section>
 
     <section>

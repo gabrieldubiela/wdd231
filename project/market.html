@@ -7,6 +7,7 @@
   <meta name="description" content="Access real-time data from Nasdaq, Dow Jones, and inflation rates to track trends and manage your investments wisely.">
 
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Market Insights & Financial Data | FinScope Tools" />
@@ -40,12 +41,29 @@
 
     <section>
       <h2>Key Market Indicators</h2>
-      <ul>
-        <li>Nasdaq Composite</li>
-        <li>Dow Jones Industrial Average</li>
-        <li>Consumer Price Index (CPI)</li>
-        <li>Federal Reserve Interest Rates</li>
-      </ul>
+
+      <div id="nasdaq" class="indicator">
+        <h3>Nasdaq Composite</h3>
+        <p><strong>Value:</strong> <span id="nasdaq-value">Loading...</span></p>
+        <p><strong>Change:</strong> <span id="nasdaq-change">Loading...</span></p>
+      </div>
+
+      <div id="dowjones" class="indicator">
+        <h3>Dow Jones Industrial Average</h3>
+        <p><strong>Value:</strong> <span id="dowjones-value">Loading...</span></p>
+        <p><strong>Change:</strong> <span id="dowjones-change">Loading...</span></p>
+      </div>
+
+      <div id="cpi" class="indicator">
+        <h3>Consumer Price Index (CPI)</h3>
+        <p><strong>Latest Data:</strong> <span id="cpi-value">Loading...</span></p>
+      </div>
+
+      <div id="fedrate" class="indicator">
+        <h3>Federal Reserve Interest Rate</h3>
+        <p><strong>Current Rate:</strong> <span id="fedrate-value">Loading...</span></p>
+      </div>
+
     </section>
 
     <section>

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 1; i <= n; i++) { 
             total += M * Math.pow(1 + r, n - i); 
         } 
-        const bla = 1
+        const bla = 19
         const blabla = 2
         document.getElementById('compoundResult').innerHTML = `<p>Total after ${bla / 12} years: $${blabla.toFixed(2)}</p>`; 
     });

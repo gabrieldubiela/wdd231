@@ -1,9 +1,12 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Investment Calculators & Tools | FinScope Tools</title>
-  <meta name="description" content="Try our free investment calculator and financial tools to evaluate your investment options and calculate returns over time.">  <link rel="icon" type="image/png" href="favicon.png">  <!-- Open Graph Meta Tags -->  <meta property="og:title" content="Investment Calculators & Tools | FinScope Tools" />
+  <meta name="description" content="Try our free investment calculator and financial tools to evaluate your investment options and calculate returns over time.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:title" content="Investment Calculators & Tools | FinScope Tools" />
   <meta property="og:description" content="Try our free investment calculator and financial tools to evaluate your investment options and calculate returns over time." />
   <meta property="og:image" content="https://www.example.com/social-preview.png" />
   <meta property="og:url" content="https://www.finscope-tools.com/tools.html" />
@@ -12,7 +15,7 @@
   <meta name="twitter:title" content="Investment Calculators & Tools | FinScope Tools" />
   <meta name="twitter:description" content="Try our free investment calculator and financial tools to evaluate your investment options and calculate returns over time." />
   <meta name="twitter:image" content="https://www.example.com/social-preview.png" />
-  <script src="scripts/tools.js" defer></script>
+  <script src="scripts/tools.js"></script>
 </head>
 <body>  
   <header>
@@ -30,52 +33,53 @@
     </section>
     <section>
       <h2>Popular Tools</h2>
-    <section id="compound">
-      <h2>Compound Interest Calculator</h2>
-      <form id="compoundForm">
-        <label>Initial Investment ($): <input type="number" id="compoundPrincipal" required></label><br>
-        <label>Monthly Contribution ($): <input type="number" id="compoundMonthly" required></label><br>
-        <label>Annual Interest Rate (%): <input type="number" id="compoundRate" step="0.01" required></label><br>
-        <label>Investment Period (Years): <input type="number" id="compoundYears" required></label><br>
-        <button type="submit">Calculate</button>
-      </form>
-      <div id="compoundResult"></div>
-    </section>
+      <section id="compound">
+        <h2>Compound Interest Calculator</h2>
+        <form id="compoundForm">
+          <label>Initial Investment ($): <input type="number" id="compoundPrincipal" required></label><br>
+          <label>Monthly Contribution ($): <input type="number" id="compoundMonthly" required></label><br>
+          <label>Annual Interest Rate (%): <input type="number" id="compoundRate" step="0.01" required></label><br>
+          <label>Investment Period (Years): <input type="number" id="compoundYears" required></label><br>
+          <button type="submit">Calculate</button>
+        </form>
+        <div id="compoundResult"></div>
+      </section>
 
-    <section id="retirement">
-      <h2>Retirement Planning Estimator</h2>
-      <form id="retirementForm">
-        <label>Current Age: <input type="number" id="currentAge" required></label><br>
-        <label>Retirement Age: <input type="number" id="retirementAge" required></label><br>
-        <label>Current Savings ($): <input type="number" id="currentSavings" required></label><br>
-        <label>Monthly Contribution ($): <input type="number" id="retirementMonthly" required></label><br>
-        <label>Annual Return Rate (%): <input type="number" id="retirementRate" step="0.01" required></label><br>
-        <button type="submit">Estimate</button>
-      </form>
-      <div id="retirementResult"></div>
-    </section>
+      <section id="retirement">
+        <h2>Retirement Planning Estimator</h2>
+        <form id="retirementForm">
+          <label>Current Age: <input type="number" id="currentAge" required></label><br>
+          <label>Retirement Age: <input type="number" id="retirementAge" required></label><br>
+          <label>Current Savings ($): <input type="number" id="currentSavings" required></label><br>
+          <label>Monthly Contribution ($): <input type="number" id="retirementMonthly" required></label><br>
+          <label>Annual Return Rate (%): <input type="number" id="retirementRate" step="0.01" required></label><br>
+          <button type="submit">Estimate</button>
+        </form>
+        <div id="retirementResult"></div>
+      </section>
 
-    <section id="comparison">
-      <h2>Investment Comparison Tool</h2>
-      <form id="comparisonForm">
-        <h3>Investment A</h3>
-        <label>Initial Amount ($): <input type="number" id="aPrincipal" required></label><br>
-        <label>Monthly Contribution ($): <input type="number" id="aMonthly" required></label><br>
-        <label>Annual Rate (%): <input type="number" id="aRate" step="0.01" required></label><br>
-        <label>Years: <input type="number" id="compareYears" required></label><br>
-        <h3>Investment B</h3>
-        <label>Initial Amount ($): <input type="number" id="bPrincipal" required></label><br>
-        <label>Monthly Contribution ($): <input type="number" id="bMonthly" required></label><br>
-        <label>Annual Rate (%): <input type="number" id="bRate" step="0.01" required></label><br>
-        <label>Years: <input type="number" id="compareYears" required></label><br>
-        <button type="submit">Compare</button>
-      </form>
-      <div id="comparisonResult"></div>
+      <section id="comparison">
+        <h2>Investment Comparison Tool</h2>
+        <form id="comparisonForm">
+          <h3>Investment A</h3>
+          <label>Initial Amount ($): <input type="number" id="aPrincipal" required></label><br>
+          <label>Monthly Contribution ($): <input type="number" id="aMonthly" required></label><br>
+          <label>Annual Rate (%): <input type="number" id="aRate" step="0.01" required></label><br>
+          <label>Years: <input type="number" id="aYears" required></label><br>
+          <h3>Investment B</h3>
+          <label>Initial Amount ($): <input type="number" id="bPrincipal" required></label><br>
+          <label>Monthly Contribution ($): <input type="number" id="bMonthly" required></label><br>
+          <label>Annual Rate (%): <input type="number" id="bRate" step="0.01" required></label><br>
+          <label>Years: <input type="number" id="bYears" required></label><br>
+          <button type="submit">Compare</button>
+        </form>
+        <div id="comparisonResult"></div>
+      </section>
     </section>
-    </section>
-
   </main>
   <footer>
     <p>&copy; 2025 FinScope Tools. All rights reserved.</p>
-  </footer></body>
+  </footer>
+  <script src="script.js"></script>
+</body>
 </html>

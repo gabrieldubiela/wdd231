@@ -1,3 +1,8 @@
+try {
+  const response = await fetch(`${baseUrl}/quote/^IXIC,^DJI,^GSPC?apikey=${api_key}`, options);
+  if (response.status === 403) {
+      throw new Error('API key rejected - check your subscription');
+  }
   document.addEventListener("DOMContentLoaded", () => {
     const api_key = 'cG9sW2aaaUz5ycrPRYRm8bbZzqxVHZp5';
     const url = 'https://financialmodelingprep.com/api/v3';
@@ -32,3 +37,4 @@
     fetchData('economic/cpi', 'cpi-value', data => `${data.value}% (${new Date(data.date).toLocaleDateString()})`);
     fetchData('economic/fedfundsrate', 'fedrate-value', data => `${data.value}% (${new Date(data.date).toLocaleDateString()})`);
   });
+}

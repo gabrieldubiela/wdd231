@@ -44,49 +44,118 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const symbols = {
-      '^IXIC': 'nasdaq',
-      '^DJI': 'dowjones',
-      '^GSPC': 'sp500'
-  };
+  const symbols = [
+      { symbol: '^IXIC', name: 'nasdaq' },
+      { symbol: '^DJI', name: 'dowjones' },
+      { symbol: '^GSPC', name: 'sp500' }
+  ];
 
-  async function fetchMarketData() {
+  // Primary data source (Yahoo Finance)
+  async function fetchYahooData() {
       try {
-          const response = await fetch(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${Object.keys(symbols).join(',')}`);
+          const response = await fetch(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symbols.map(s => s.symbol).join(',')}`);
           const data = await response.json();
-
+          
           if (data.quoteResponse?.result) {
-              data.quoteResponse.result.forEach(stock => {
-                  const prefix = symbols[stock.symbol];
-                  if (prefix) {
-                      document.getElementById(`${prefix}-value`).textContent = `$${stock.regularMarketPrice?.toFixed(2) || '--'}`;
-                      
-                      const changeElement = document.getElementById(`${prefix}-change`);
-                      if (stock.regularMarketChange && stock.regularMarketChangePercent) {
-                          changeElement.textContent = 
-                              `${stock.regularMarketChange.toFixed(2)} (${stock.regularMarketChangePercent.toFixed(2)}%)`;
-                          changeElement.style.color = stock.regularMarketChange >= 0 ? '#28a745' : '#dc3545';
-                      } else {
-                          changeElement.textContent = '--';
-                      }
-                  }
-              });
+              return data.quoteResponse.result.reduce((acc, stock) => {
+                  acc[stock.symbol] = {
+                      price: stock.regularMarketPrice,
+                      change: stock.regularMarketChange,
+                      changePercent: stock.regularMarketChangePercent
+                  };
+                  return acc;
+              }, {});
           }
       } catch (error) {
-          console.error("Market data error:", error);
-          Object.values(symbols).forEach(prefix => {
-              document.getElementById(`${prefix}-value`).textContent = '--';
-              document.getElementById(`${prefix}-change`).textContent = '--';
-          });
+          console.log("Yahoo Finance API failed, trying fallback");
+          return null;
+      }
+      return null;
+  }
+
+  // First fallback (MarketStack)
+  async function fetchMarketStackData() {
+      try {
+          // Free plan allows 1,000 calls/month
+          const response = await fetch(`http://api.marketstack.com/v1/intraday?access_key=YOUR_MARKETSTACK_KEY&symbols=${symbols.map(s => s.symbol).join(',')}`);
+          const data = await response.json();
+          
+          if (data.data) {
+              return data.data.reduce((acc, stock) => {
+                  acc[stock.symbol] = {
+                      price: stock.last,
+                      change: stock.last - stock.open,
+                      changePercent: ((stock.last - stock.open) / stock.open * 100)
+                  };
+                  return acc;
+              }, {});
+          }
+      } catch (error) {
+          console.log("MarketStack failed, trying final fallback");
+          return null;
+      }
+      return null;
+  }
+
+  // Final fallback (12Data)
+  async function fetch12Data() {
+      try {
+          // Free plan allows 8 calls/day
+          const promises = symbols.map(s => 
+              fetch(`https://api.twelvedata.com/price?symbol=${s.symbol}&apikey=YOUR_12DATA_KEY`)
+          );
+          const responses = await Promise.all(promises);
+          const data = await Promise.all(responses.map(r => r.json()));
+          
+          return responses.reduce((acc, response, index) => {
+              if (response.price) {
+                  acc[symbols[index].symbol] = {
+                      price: parseFloat(response.price),
+                      change: 0, // Fallback doesn't provide change data
+                      changePercent: 0
+                  };
+              }
+              return acc;
+          }, {});
+      } catch (error) {
+          console.log("All APIs failed");
+          return null;
       }
   }
 
-  // Initial fetch
-  fetchMarketData();
+  async function updateMarketData() {
+      let data = await fetchYahooData() || 
+                await fetchMarketStackData() || 
+                await fetch12Data();
+
+      symbols.forEach(indicator => {
+          const valueElement = document.getElementById(`${indicator.name}-value`);
+          const changeElement = document.getElementById(`${indicator.name}-change`);
+          
+          if (data?.[indicator.symbol]?.price) {
+              const stock = data[indicator.symbol];
+              valueElement.textContent = `$${stock.price.toFixed(2)}`;
+              
+              if (stock.change !== undefined && stock.changePercent !== undefined) {
+                  changeElement.textContent = 
+                      `${stock.change.toFixed(2)} (${stock.changePercent.toFixed(2)}%)`;
+                  changeElement.style.color = stock.change >= 0 ? '#28a745' : '#dc3545';
+              } else {
+                  changeElement.textContent = '--';
+              }
+          } else {
+              valueElement.textContent = 'Data unavailable';
+              changeElement.textContent = '--';
+          }
+      });
+  }
+
+  // Initial load
+  updateMarketData();
 
   // Refresh every 60 seconds
-  setInterval(fetchMarketData, 60000);
+  setInterval(updateMarketData, 60000);
 
-  // Manual refresh button
-  document.getElementById('refresh-btn')?.addEventListener('click', fetchMarketData);
+  // Manual refresh
+  document.getElementById('refresh-btn')?.addEventListener('click', updateMarketData);
 });

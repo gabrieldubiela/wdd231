@@ -9,7 +9,7 @@ document.getElementById('compoundForm').addEventListener('submit', function(e) {
     for (let i = 1; i <= n; i++) { 
       total += M * Math.pow(1 + r, n - i); 
     } 
-    document.getElementById('compoundResult').innerHTML = `<p>Total after ${n / 12} years: $${total.toFixed(2)}</p>`; 
+    document.getElementById('compoundResult').textContent = `<p>Total after ${n / 12} years: $${total.toFixed(2)}</p>`; 
   });
   
   document.getElementById('retirementForm').addEventListener('submit', function(e) { 

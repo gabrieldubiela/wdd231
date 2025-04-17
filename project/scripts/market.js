@@ -40,5 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           document.getElementById('cpi-value').textContent = "3.2% (Fallback)";
       }
   }
+
+  // Call the function
   fetchCPI();
 });

@@ -19,7 +19,6 @@
   <script src="scripts/market.js" defer></script>
 </head>
 <body>
-
   <header>
     <h1>FinScope Tools</h1>
     <nav>
@@ -32,32 +31,39 @@
   <main>
     <section>
       <h2>Live Market Insights</h2>
-      <p>Stay updated with the latest numbers from the financial markets. We bring you live feeds for Nasdaq, Dow Jones, S&P 500, and more.</p>
+      <p>Stay updated with the latest numbers from the financial markets.</p>
     </section>
 
     <section>
       <h2>Key Market Indicators</h2>
+      <div id="market-data">
+        <div id="nasdaq" class="indicator">
+          <h3>Nasdaq Composite</h3>
+          <p><strong>Value:</strong> <span id="nasdaq-value">Loading...</span></p>
+          <p><strong>Change:</strong> <span id="nasdaq-change">Loading...</span></p>
+        </div>
 
-      <div id="nasdaq" class="indicator">
-        <h3>Nasdaq Composite</h3>
-        <p><strong>Value:</strong> <span id="nasdaq-value">Loading...</span></p>
-        <p><strong>Change:</strong> <span id="nasdaq-change">Loading...</span></p>
-      </div>
+        <div id="dowjones" class="indicator">
+          <h3>Dow Jones Industrial Average</h3>
+          <p><strong>Value:</strong> <span id="dowjones-value">Loading...</span></p>
+          <p><strong>Change:</strong> <span id="dowjones-change">Loading...</span></p>
+        </div>
 
-      <div id="dowjones" class="indicator">
-        <h3>Dow Jones Industrial Average</h3>
-        <p><strong>Value:</strong> <span id="dowjones-value">Loading...</span></p>
-        <p><strong>Change:</strong> <span id="dowjones-change">Loading...</span></p>
-      </div>
+        <div id="sp500" class="indicator">
+          <h3>S&P 500</h3>
+          <p><strong>Value:</strong> <span id="sp500-value">Loading...</span></p>
+          <p><strong>Change:</strong> <span id="sp500-change">Loading...</span></p>
+        </div>
 
-      <div id="cpi" class="indicator">
-        <h3>Consumer Price Index (CPI)</h3>
-        <p><strong>Latest Data:</strong> <span id="cpi-value">Loading...</span></p>
-      </div>
+        <div id="cpi" class="indicator">
+          <h3>Consumer Price Index (CPI)</h3>
+          <p><strong>Latest Data:</strong> <span id="cpi-value">Loading...</span></p>
+        </div>
 
-      <div id="fedrate" class="indicator">
-        <h3>Federal Reserve Interest Rate</h3>
-        <p><strong>Current Rate:</strong> <span id="fedrate-value">Loading...</span></p>
+        <div id="fedrate" class="indicator">
+          <h3>Federal Reserve Interest Rate</h3>
+          <p><strong>Current Rate:</strong> <span id="fedrate-value">Loading...</span></p>
+        </div>
       </div>
     </section>
   </main>
@@ -65,6 +71,5 @@
   <footer>
     <p>&copy; 2025 FinScope Tools. All rights reserved.</p>
   </footer>
-
 </body>
 </html>

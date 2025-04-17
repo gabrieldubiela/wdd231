@@ -40,7 +40,53 @@ document.addEventListener("DOMContentLoaded", async () => {
           document.getElementById('cpi-value').textContent = "3.2% (Fallback)";
       }
   }
-
-  // Call the function
   fetchCPI();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const symbols = {
+      '^IXIC': 'nasdaq',
+      '^DJI': 'dowjones',
+      '^GSPC': 'sp500'
+  };
+
+  async function fetchMarketData() {
+      try {
+          const response = await fetch(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${Object.keys(symbols).join(',')}`);
+          const data = await response.json();
+
+          if (data.quoteResponse?.result) {
+              data.quoteResponse.result.forEach(stock => {
+                  const prefix = symbols[stock.symbol];
+                  if (prefix) {
+                      document.getElementById(`${prefix}-value`).textContent = `$${stock.regularMarketPrice?.toFixed(2) || '--'}`;
+                      
+                      const changeElement = document.getElementById(`${prefix}-change`);
+                      if (stock.regularMarketChange && stock.regularMarketChangePercent) {
+                          changeElement.textContent = 
+                              `${stock.regularMarketChange.toFixed(2)} (${stock.regularMarketChangePercent.toFixed(2)}%)`;
+                          changeElement.style.color = stock.regularMarketChange >= 0 ? '#28a745' : '#dc3545';
+                      } else {
+                          changeElement.textContent = '--';
+                      }
+                  }
+              });
+          }
+      } catch (error) {
+          console.error("Market data error:", error);
+          Object.values(symbols).forEach(prefix => {
+              document.getElementById(`${prefix}-value`).textContent = '--';
+              document.getElementById(`${prefix}-change`).textContent = '--';
+          });
+      }
+  }
+
+  // Initial fetch
+  fetchMarketData();
+
+  // Refresh every 60 seconds
+  setInterval(fetchMarketData, 60000);
+
+  // Manual refresh button
+  document.getElementById('refresh-btn')?.addEventListener('click', fetchMarketData);
 });

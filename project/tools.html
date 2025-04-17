@@ -12,77 +12,68 @@
   <meta name="twitter:description" content="Try our free investment calculator and financial tools to evaluate your investment options and calculate returns over time." />
   <meta name="twitter:image" content="https://www.example.com/social-preview.png" />
 </head>
-<body>  <header>
+<body>  
+  <header>
     <h1>FinScope Tools</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="tools.html">Tools</a>
       <a href="market.html">Market Insights</a>
     </nav>
-  </header>  <main>
+  </header>  
+  <main>
     <section>
       <h2>Investment Tools</h2>
       <p>Use our calculators to evaluate compound interest, investment growth, and compare multiple financial strategies side by side.</p>
-    </section><section>
-  <h2>Popular Tools</h2>
-  <ul>
-    <li><a href="#compound">Compound Interest Calculator</a></li>
-    <li><a href="#retirement">Retirement Planning Estimator</a></li>
-    <li><a href="#comparison">Investment Comparison Tool</a></li>
-  </ul>
-</section>
+    </section>
+    <section>
+      <h2>Popular Tools</h2>
+    <section id="compound">
+      <h2>Compound Interest Calculator</h2>
+      <form id="compoundForm">
+        <label>Initial Investment ($): <input type="number" id="compoundPrincipal" required></label><br>
+        <label>Monthly Contribution ($): <input type="number" id="compoundMonthly" required></label><br>
+        <label>Annual Interest Rate (%): <input type="number" id="compoundRate" step="0.01" required></label><br>
+        <label>Investment Period (Years): <input type="number" id="compoundYears" required></label><br>
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="compoundResult"></div>
+    </section>
 
-<section id="compound">
-  <h2>Compound Interest Calculator</h2>
-  <form id="compoundForm">
-    <label>Initial Investment ($): <input type="number" id="compoundPrincipal" required></label><br>
-    <label>Monthly Contribution ($): <input type="number" id="compoundMonthly" required></label><br>
-    <label>Annual Interest Rate (%): <input type="number" id="compoundRate" step="0.01" required></label><br>
-    <label>Investment Period (Years): <input type="number" id="compoundYears" required></label><br>
-    <button type="submit">Calculate</button>
-  </form>
-  <div id="compoundResult"></div>
-</section>
+    <section id="retirement">
+      <h2>Retirement Planning Estimator</h2>
+      <form id="retirementForm">
+        <label>Current Age: <input type="number" id="currentAge" required></label><br>
+        <label>Retirement Age: <input type="number" id="retirementAge" required></label><br>
+        <label>Current Savings ($): <input type="number" id="currentSavings" required></label><br>
+        <label>Monthly Contribution ($): <input type="number" id="retirementMonthly" required></label><br>
+        <label>Annual Return Rate (%): <input type="number" id="retirementRate" step="0.01" required></label><br>
+        <button type="submit">Estimate</button>
+      </form>
+      <div id="retirementResult"></div>
+    </section>
 
-<section id="retirement">
-  <h2>Retirement Planning Estimator</h2>
-  <form id="retirementForm">
-    <label>Current Age: <input type="number" id="currentAge" required></label><br>
-    <label>Retirement Age: <input type="number" id="retirementAge" required></label><br>
-    <label>Current Savings ($): <input type="number" id="currentSavings" required></label><br>
-    <label>Monthly Contribution ($): <input type="number" id="retirementMonthly" required></label><br>
-    <label>Annual Return Rate (%): <input type="number" id="retirementRate" step="0.01" required></label><br>
-    <button type="submit">Estimate</button>
-  </form>
-  <div id="retirementResult"></div>
-</section>
+    <section id="comparison">
+      <h2>Investment Comparison Tool</h2>
+      <form id="comparisonForm">
+        <h3>Investment A</h3>
+        <label>Initial Amount ($): <input type="number" id="aPrincipal" required></label><br>
+        <label>Monthly Contribution ($): <input type="number" id="aMonthly" required></label><br>
+        <label>Annual Rate (%): <input type="number" id="aRate" step="0.01" required></label><br>
+        <label>Years: <input type="number" id="compareYears" required></label><br>
+        <h3>Investment B</h3>
+        <label>Initial Amount ($): <input type="number" id="bPrincipal" required></label><br>
+        <label>Monthly Contribution ($): <input type="number" id="bMonthly" required></label><br>
+        <label>Annual Rate (%): <input type="number" id="bRate" step="0.01" required></label><br>
+        <label>Years: <input type="number" id="compareYears" required></label><br>
+        <button type="submit">Compare</button>
+      </form>
+      <div id="comparisonResult"></div>
+    </section>
+    </section>
 
-<section id="comparison">
-  <h2>Investment Comparison Tool</h2>
-  <form id="comparisonForm">
-    <h3>Investment A</h3>
-    <label>Initial Amount ($): <input type="number" id="aPrincipal" required></label><br>
-    <label>Monthly Contribution ($): <input type="number" id="aMonthly" required></label><br>
-    <label>Annual Rate (%): <input type="number" id="aRate" step="0.01" required></label><br>
-    <h3>Investment B</h3>
-    <label>Initial Amount ($): <input type="number" id="bPrincipal" required></label><br>
-    <label>Monthly Contribution ($): <input type="number" id="bMonthly" required></label><br>
-    <label>Annual Rate (%): <input type="number" id="bRate" step="0.01" required></label><br>
-    <label>Years: <input type="number" id="compareYears" required></label><br>
-    <button type="submit">Compare</button>
-  </form>
-  <div id="comparisonResult"></div>
-</section>
-
-<section>
-  <h2>User Scenarios</h2>
-  <p><strong>Q:</strong> How can I estimate returns over 10 years with monthly contributions?</p>
-  <p><strong>A:</strong> Use the compound interest calculator with custom intervals and rates.</p>
-  <p><strong>Q:</strong> What investment strategy is better in the long run?</p>
-  <p><strong>A:</strong> Use the comparison tool to view side-by-side performance projections.</p>
-</section>
-
-  </main>  <footer>
+  </main>
+  <footer>
     <p>&copy; 2025 FinScope Tools. All rights reserved.</p>
   </footer></body>
 </html>

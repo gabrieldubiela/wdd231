@@ -1,69 +1,110 @@
-// Importações equivalentes em JS (não são necessárias no navegador)
-// No Node.js você usaria const fetch = require('node-fetch');
+// market.js - BLS API Integration for CPI Data
 
-async function fetchBLSCpiData() {
-    const headers = { 'Content-type': 'application/json' };
-    const data = {
-        seriesid: ['CUUR0000SA0', 'SUUR0000SA0'],
-        startyear: "2011",
-        endyear: "2014"
+document.addEventListener('DOMContentLoaded', function() {
+    // Configurações da API
+    const BLS_API_CONFIG = {
+        endpoint: 'https://api.bls.gov/publicAPI/v1/timeseries/data/',
+        seriesIds: ['CUUR0000SA0'], // Série do CPI-U (Consumer Price Index for All Urban Consumers)
+        latestYearOnly: true,      // Buscar apenas o ano mais recente
+        maxYears: 10               // Número máximo de anos que pode ser solicitado
     };
 
+    // Buscar dados do CPI quando a página carregar
+    fetchCPIData(BLS_API_CONFIG);
+});
+
+async function fetchCPIData(config) {
     try {
-        // Fazendo a requisição POST (equivalente ao requests.post do Python)
-        const response = await fetch('https://api.bls.gov/publicAPI/v1/timeseries/data/', {
+        // Mostrar estado de carregamento
+        document.getElementById('cpi-value').textContent = 'Loading...';
+
+        // Determinar anos de início e fim
+        const currentYear = new Date().getFullYear();
+        const startYear = config.latestYearOnly ? currentYear.toString() : (currentYear - 1).toString();
+        const endYear = currentYear.toString();
+
+        // Preparar payload da requisição
+        const payload = {
+            seriesid: config.seriesIds,
+            startyear: startYear,
+            endyear: endYear
+        };
+
+        // Fazer a requisição à API BLS
+        const response = await fetch(config.endpoint, {
             method: 'POST',
-            headers: headers,
-            body: JSON.stringify(data)
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
         });
 
-        const jsonData = await response.json();
-
-        // Processando os dados da resposta
-        for (const series of jsonData.Results.series) {
-            // Criando uma tabela (equivalente ao prettytable)
-            let tableData = [];
-            const headers = ["series id", "year", "period", "value", "footnotes"];
-            tableData.push(headers);
-
-            const seriesId = series.seriesID;
-            
-            for (const item of series.data) {
-                const year = item.year;
-                const period = item.period;
-                const value = item.value;
-                let footnotes = "";
-                
-                for (const footnote of item.footnotes) {
-                    if (footnote) {
-                        footnotes += footnote.text + ',';
-                    }
-                }
-
-                if ('M01' <= period && period <= 'M12') {
-                    tableData.push([seriesId, year, period, value, footnotes.slice(0, -1)]);
-                }
-            }
-
-            // Exibindo os dados no console (equivalente a escrever em arquivo)
-            console.log(`Dados para a série ${seriesId}:`);
-            console.table(tableData);
-            
-            // Se você realmente quiser salvar em arquivo no navegador:
-            // Isso criará um download do arquivo
-            const blob = new Blob([JSON.stringify(tableData, null, 2)], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${seriesId}.txt`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+
+        const data = await response.json();
+
+        // Verificar status da resposta
+        if (data.status !== 'REQUEST_SUCCEEDED') {
+            throw new Error(`API error: ${data.message.join(', ')}`);
+        }
+
+        // Processar os dados recebidos
+        processCPIResponse(data);
+
     } catch (error) {
-        console.error('Erro ao buscar dados do BLS:', error);
+        console.error('Error fetching CPI data:', error);
+        document.getElementById('cpi-value').textContent = 'Error loading data';
+        document.getElementById('cpi-value').classList.add('error');
     }
 }
 
-// Chamando a função
-fetchBLSCpiData();
+function processCPIResponse(responseData) {
+    // Encontrar a série do CPI
+    const cpiSeries = responseData.Results.series.find(series => 
+        series.seriesID === 'CUUR0000SA0'
+    );
+
+    if (!cpiSeries || !cpiSeries.data || cpiSeries.data.length === 0) {
+        throw new Error('No CPI data found in response');
+    }
+
+    // Ordenar os dados por data (do mais recente para o mais antigo)
+    const sortedData = cpiSeries.data.sort((a, b) => {
+        return `${b.year}${b.period}`.localeCompare(`${a.year}${a.period}`);
+    });
+
+    // Pegar o dado mais recente
+    const latestCPI = sortedData[0];
+
+    // Formatar o valor para exibição
+    const formattedValue = parseFloat(latestCPI.value).toFixed(2);
+    const periodName = getFormattedPeriod(latestCPI.period, latestCPI.year);
+
+    // Atualizar a página com os dados
+    document.getElementById('cpi-value').innerHTML = `
+        <strong>${formattedValue}</strong> (${periodName})<br>
+        <small>${getFootnotesText(latestCPI.footnotes)}</small>
+    `;
+}
+
+// Função auxiliar para formatar o período (M01 -> Janeiro, etc.)
+function getFormattedPeriod(period, year) {
+    if (period === 'M13') return `Annual ${year}`;
+    
+    const monthMap = {
+        'M01': 'January', 'M02': 'February', 'M03': 'March',
+        'M04': 'April', 'M05': 'May', 'M06': 'June',
+        'M07': 'July', 'M08': 'August', 'M09': 'September',
+        'M10': 'October', 'M11': 'November', 'M12': 'December'
+    };
+    
+    return `${monthMap[period]} ${year}`;
+}
+
+// Função auxiliar para formatar as notas de rodapé
+function getFootnotesText(footnotes) {
+    if (!footnotes || footnotes.length === 0) return '';
+    return footnotes.map(fn => fn.text).join('; ');
+}

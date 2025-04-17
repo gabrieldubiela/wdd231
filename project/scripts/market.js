@@ -1,40 +1,44 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  // Fetch BLS data (CPI and Treasury)
-  async function fetchEconomicData() {
-      try {
-          const response = await fetch('https://api.bls.gov/publicAPI/v1/timeseries/data/', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                  seriesid: ['CUUR0000SA0', 'SUUR0000SA0'],
-                  startyear: new Date().getFullYear().toString(),
-                  endyear: new Date().getFullYear().toString()
-              })
-          });
+document.addEventListener("DOMContentLoaded", function () {
+  const cpiSpan = document.getElementById("cpi-value");
+  const fedRateSpan = document.getElementById("fedrate-value"); // caso queira mostrar outro indicador (opcional)
 
-          const data = await response.json();
-          
-          if (data.Results?.series) {
-              data.Results.series.forEach(series => {
-                  const latest = series.data[0];
-                  const month = ['Jan','Feb','Mar','Apr','May','Jun',
-                                 'Jul','Aug','Sep','Oct','Nov','Dec'][parseInt(latest.period.replace('M',''))-1];
-                  
-                  if (series.seriesID === 'CUUR0000SA0') {
-                      document.getElementById('cpi-value').textContent = 
-                          `${latest.value}% (${month} ${latest.year})`;
-                  } else if (series.seriesID === 'SUUR0000SA0') {
-                      document.getElementById('treasury-value').textContent = 
-                          `${latest.value}% (${month} ${latest.year})`;
-                  }
-              });
-          }
-      } catch (error) {
-          console.error("BLS API Error:", error);
-          document.getElementById('cpi-value').textContent = "3.2% (Fallback)";
-          document.getElementById('treasury-value').textContent = "N/A";
+  const headers = {
+    "Content-Type": "application/json"
+  };
+
+  const requestBody = JSON.stringify({
+    seriesid: ["CUUR0000SA0", "SUUR0000SA0"], // CPI-U All Urban Consumers e um segundo índice de exemplo
+    startyear: "2023",
+    endyear: "2025"
+  });
+
+  fetch("https://api.bls.gov/publicAPI/v1/timeseries/data/", {
+    method: "POST",
+    headers: headers,
+    body: requestBody
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status !== "REQUEST_SUCCEEDED") {
+        cpiSpan.textContent = "Erro ao carregar dados.";
+        fedRateSpan.textContent = "Erro ao carregar dados.";
+        return;
       }
-  }
 
-  fetchEconomicData();
+      data.Results.series.forEach(series => {
+        const latest = series.data.find(item => item.value !== "");
+        const label = `${latest.value} (${latest.year}-${latest.period})`;
+
+        if (series.seriesID === "CUUR0000SA0") {
+          cpiSpan.textContent = label;
+        } else if (series.seriesID === "SUUR0000SA0") {
+          fedRateSpan.textContent = label;
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Erro ao buscar dados do BLS:", error);
+      cpiSpan.textContent = "Erro na requisição.";
+      fedRateSpan.textContent = "Erro na requisição.";
+    });
 });
